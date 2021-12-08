@@ -1,7 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 
 // Components
 import Submenu from "./Submenu";
+
+// Icons & Logos
+import Logo from "@assets/logos/logo_white.svg";
+import iconFB from "@assets/icons/facebook.svg";
+import iconIG from "@assets/icons/instagram.svg";
+import iconLI from "@assets/icons/linkedin.svg";
 
 const Navbar = () => {
   const menu = [
@@ -46,27 +53,35 @@ const Navbar = () => {
 
   return (
     <header className="header">
-      <div className="header__logo">
-          <span>logo</span>
-      </div>
-      <div className="header__navigation">
-        <nav className='nav'>
-          {menu.map((nav) => {
-            if (nav.children) {
-              return <Submenu data={nav} key={nav.id} />;
-            } else {
-              return (
-                <Link key={nav.id} href={nav.to}>
-                  <a className='nav__item'>{nav.menu}</a>
-                </Link>
-              );
-            }
-          })}
-        </nav>
-        <div className="navigation__socials">
-          <a href="/">FB</a>
-          <a href="/">TW</a>
-          <a href="/">LI</a>
+      <div className="header__container">
+        <div className="header__logo">
+          <Image src={Logo} />
+        </div>
+        <div className="header__navigation">
+          <nav className="nav">
+            {menu.map((nav) => {
+              if (nav.children) {
+                return <Submenu data={nav} key={nav.id} />;
+              } else {
+                return (
+                  <Link key={nav.id} href={nav.to}>
+                    <a className="nav__item">{nav.menu}</a>
+                  </Link>
+                );
+              }
+            })}
+          </nav>
+          <div className="header__navigation__socials">
+            <a href="/">
+              <Image src={iconFB} />
+            </a>
+            <a href="/">
+              <Image src={iconLI} />
+            </a>
+            <a href="/">
+              <Image src={iconIG} />
+            </a>
+          </div>
         </div>
       </div>
     </header>

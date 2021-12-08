@@ -18,5 +18,26 @@
         @include breakpoint(lg) {
             max-width: 40%;
         }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .vspn-certified {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-left: 6px;
+                top: 2px;
+                font-family: 'Freightsans Pro', 'Arial', sans-serif;
+                font-weight: bold;
+            }
+        }
+
+        button {
+            margin-top: 24px;
+        }
     }
 }
