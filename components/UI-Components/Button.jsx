@@ -1,8 +1,10 @@
-const Button = () => {
+import Link from 'next/link'
+
+const Button = ({to, type, text}) => {
     return (
-        <div>
-            <button className='btn btn--primary'>Plan jou sessie</button>
-        </div>
+        <Link href={to}>
+            <button className={type === 'secondary' ? 'btn btn--secondary' : 'btn btn--primary'}>{text}</button>
+        </Link>
     )
 }
 
