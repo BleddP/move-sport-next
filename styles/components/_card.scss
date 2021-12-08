@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    border: 1px solid gray;
+
+    &__image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        border-radius: 25px 25px 0px 0px;
+    }
+
+    &__content {
+        padding: 12px;
+        @include breakpoint(md) {
+            padding: 24px;
+        }
+    }
+}
