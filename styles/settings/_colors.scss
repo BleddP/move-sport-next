@@ -1,6 +1,11 @@
 // Custom colors
 // -------------------------
-$c1:                #821EFE !default;
-$c2:                #4B0DFC !default;
-$c3:                #212227 !default;
-$branded-gradient:   linear-gradient(-45deg, $c1, $c2);
+$c1: #821efe !default;
+$c2: #4b0dfc !default;
+$c3: #212227 !default;
+$dark: #212227 !default;
+$branded-gradient: linear-gradient(-45deg, $c1, $c2);
+
+body {
+  background-color: whitesmoke;
+}

@@ -1,0 +1,9 @@
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}

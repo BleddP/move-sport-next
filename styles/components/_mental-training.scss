@@ -1,0 +1,24 @@
+.mental-training {
+    background-color: $dark;
+    padding: 48px 0;
+    * {
+        color: whitesmoke;
+    }
+
+    &__content {
+        text-align: center;
+    }
+
+    &__usps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        @include breakpoint(md) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+       
+
+    }
+}
