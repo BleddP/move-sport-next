@@ -2,3 +2,18 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.container {
+    max-width: 1280px;
+    @include breakpoint(xs) {
+        margin: 0 12px;
+    }
+
+    @include breakpoint(md) {
+        margin: 0 24px;
+    }
+
+    @include breakpoint(lg) {
+        margin: 0 48px;
+    }
+}
