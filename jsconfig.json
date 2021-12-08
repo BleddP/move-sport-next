@@ -5,6 +5,7 @@
     "paths": {
       "@UI/*": ["/components/UI-components/*"],
       "@components/*": ["/components/*"],
+      "@assets/*": ["/assets/*"],
     }
   },
   "exclude": ["node_modules"]

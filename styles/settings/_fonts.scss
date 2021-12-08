@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProLight-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProLight-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProLight-Italic.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProLight-Italic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProBook-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProBook-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProBook-Italic.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProBook-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProMedium-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProMedium-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProSemibold-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProSemibold-Regular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreightSans Pro';
+    src: url('../../assets/fonts/FreightSansProBold-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/FreightSansProBold-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');

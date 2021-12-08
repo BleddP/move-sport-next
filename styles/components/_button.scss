@@ -1,0 +1,22 @@
+.btn {
+    outline: none;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'FreightSans Pro', 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all .35s ease;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &--primary {
+        background: $branded-gradient;
+        color: white;
+    }
+
+    &--secondary {
+        background-color: firebrick;
+    }
+}
