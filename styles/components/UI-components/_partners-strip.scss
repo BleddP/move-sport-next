@@ -1,26 +1,53 @@
 .partners-strip {
-    background-color: white;
-    height: 70px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  @include breakpoint(md) {
+    overflow-x: initial;
+  }
 
-    .partner {
-        height: 50px;
-        margin: 0 12px;
+  .partner {
+    position: relative;
+    height: 50px;
+    margin: 0 12px;
 
-        img {
-            height: 100%;
-            filter: saturate(0%);
-            opacity: 0.5;
-            transition: all 0.35s ease;
-            cursor: pointer;
-
-            &:hover {
-                filter: saturate(100%);
-                opacity: 1;
-            }
-        }
+    &__tooltip {
+      position: absolute;
+      width: auto;
+      top: -90%;
+      left: 0;
+      background: $branded-gradient;
+      color: whitesmoke;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: all 0.35s ease;
     }
+
+    &:hover {
+      @include breakpoint(md) {
+        .partner__tooltip {
+            top: -110%;
+            opacity: 1;
+        }
+      }
+    }
+
+    img {
+      height: 100%;
+      filter: saturate(0%);
+      opacity: 0.5;
+      transition: all 0.35s ease;
+      cursor: pointer;
+
+      &:hover {
+        filter: saturate(100%);
+        opacity: 1;
+      }
+    }
+  }
 }

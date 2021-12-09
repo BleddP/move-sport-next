@@ -1,7 +1,13 @@
 .header {
   height: 70px;
-  background: linear-gradient(45deg, #dfd3ef, $c2);
+  position: absolute;
+  width: 100%;
+
+  &.bg {
+    background: linear-gradient(45deg, #dfd3ef, $c2);
   box-shadow: 0px 26px 34px -24px rgba(0, 0, 0, 0.7);
+    position: relative
+  }
 
   &__container {
     @extend .container;
@@ -14,6 +20,7 @@
   &__logo {
     img {
       height: 40px;
+      filter: invert(100%) brightness(1.5);
     }
   }
 
@@ -199,7 +206,6 @@
             }
           }
 
-          
           &.active {
             height: auto;
             max-height: 150px;
