@@ -55,7 +55,7 @@ const Navbar = () => {
     <header className="header">
       <div className="header__container">
         <div className="header__logo">
-          <Image src={Logo} />
+          <Image src={Logo} height={50} />
         </div>
         <div className="header__navigation">
           <nav className="nav">

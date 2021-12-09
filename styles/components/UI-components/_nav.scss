@@ -1,5 +1,5 @@
 .header {
-  height: 60px;
+  height: 70px;
   background: linear-gradient(45deg, #dfd3ef, $c2);
   box-shadow: 0px 26px 34px -24px rgba(0, 0, 0, 0.7);
 
@@ -40,6 +40,9 @@
     position: relative;
     margin: 0 12px;
     color: whitesmoke;
+    font-family: 'Freightsans Pro', 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
 
     &::after {
       content: "";
@@ -70,6 +73,7 @@
       // Positioning
       position: absolute;
       height: fit-content;
+      width: 124px;
       top: 60px;
       opacity: 0;
       pointer-events: none;
@@ -81,11 +85,13 @@
       align-items: flex-start;
       background-color: whitesmoke;
       padding: 12px;
+      padding-bottom: 24px;
       border-radius: 8px;
       box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.12);
 
       a {
         color: $dark;
+        margin: 0;
         margin-top: 12px;
         &::after {
           content: "";
