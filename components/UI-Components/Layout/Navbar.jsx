@@ -120,13 +120,13 @@ const Navbar = () => {
               })}
             </nav>
             <div className="header__navigation__socials">
-              <a href="/">
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
                 <Image src={iconFB} />
               </a>
-              <a href="/">
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
                 <Image src={iconLI} />
               </a>
-              <a href="/">
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
                 <Image src={iconIG} />
               </a>
             </div>

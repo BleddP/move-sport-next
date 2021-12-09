@@ -12,7 +12,7 @@ const Contact = () => {
             <span>Troelstrastraat 1</span>
             <span>3719 CD Didam</span>
             <span>Nederland</span>
-            <a href='mailto:info@movesportpsychologie.nl' target="_blank">info@movesportpsychologie.nl</a>
+            <a href='mailto:info@movesportpsychologie.nl' target="_blank" rel="noreferrer">info@movesportpsychologie.nl</a>
         </address>
         <Image src={Logo} />
       </div>
