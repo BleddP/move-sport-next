@@ -1,10 +1,10 @@
 // Components 
-import Hero from '@UI/Hero'
+import Hero from '@ui/Hero'
 import About from '@components/page-components/About'
 import MentalTraining from '@components/page-components/MentalTraining'
 import Services from '@components/page-components/Services'
 import Clients from '@components/page-components/Clients'
-import PartnerStrip from '@UI/PartnerStrip'
+import PartnerStrip from '@ui/PartnerStrip'
 import Contact from '@components/page-components/Contact'
 
 const Home = () => {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Components
-import Button from "@UI/Button";
+import Button from "@ui/Button";
 
 // Logos
 import VSPN from "@assets/logos/vspn.svg";

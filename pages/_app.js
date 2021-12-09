@@ -2,8 +2,8 @@ import "../styles/globals.scss";
 import { Fragment } from "react";
 
 // Components
-import Navbar from "@UI/Layout/Navbar";
-import FooterStrip from '@UI/Layout/FooterStrip'
+import Navbar from "@ui/Layout/Navbar";
+import FooterStrip from '@ui/Layout/FooterStrip'
 
 function MyApp({ Component, pageProps }) {
   return (
