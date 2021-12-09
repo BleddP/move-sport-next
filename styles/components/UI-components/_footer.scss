@@ -1,20 +1,35 @@
 .footer {
   &__strip {
-    height: 60px;
+    height: auto;
     background-color: $dark;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 0 24px;
+    padding: 12px;
+
+    @include breakpoint(md) {
+      height: 60px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+    }
 
     span,
     p,
     a {
       color: whitesmoke;
-      margin: 0;
       font-size: 12px;
+      margin: 6px 0;
+      @include breakpoint(md) {
+        margin: 0;
+      }
     }
     &__socials {
+      margin-top: 12px;
+      @include breakpoint(md) {
+        margin-top: 0;
+      }
       a {
         margin: 0 6px;
       }
