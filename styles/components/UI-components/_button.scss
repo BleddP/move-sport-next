@@ -1,23 +1,52 @@
 .btn {
-    outline: none;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-family: 'FreightSans Pro', 'Arial', sans-serif;
+  position: relative;
+  outline: none;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  transition: all 0.35s ease;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+
+  .text {
+    margin: 0;
+    color: white;
+    font-family: "FreightSans Pro", "Arial", sans-serif;
     font-weight: 600;
     font-size: 18px;
-    transition: all .35s ease;
-    width: fit-content;
+    transform: translateX(8px);
+    transition: all 0.35s ease;
+  }
 
-    &:hover {
-        cursor: pointer;
-    }
-    &--primary {
-        background: $branded-gradient;
-        color: white;
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 18px;
+    width: 18px;
+    transform: translateX(0px);
+    opacity: 0;
+    transition: all 0.35s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    span {
+        transform: translateX(0px);
     }
 
-    &--secondary {
-        background: rgba($c2, 0.3);
+    .icon {
+        transform: translateX(4px);
+        opacity: 1;
     }
+  }
+  &--primary {
+    background: $branded-gradient;
+    color: white;
+  }
+
+  &--secondary {
+    background: rgba($c2, 0.3);
+  }
 }
