@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "ES6",
     "paths": {
       "@UI/*": ["components/UI-components/*"],
       "@components/*": ["components/*"],
       "@assets/*": ["assets/*"],
     }
   },
-  "exclude": ["node_modules"]
 }
