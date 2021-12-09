@@ -2,8 +2,8 @@
   "name": "move-sport-next",
   "private": true,
   "engines": {
-    "node": "16.7.0",
-    "npm": "7.20.3"
+    "node": "v14.17.5",
+    "npm": "6.14.14"
   },
   "scripts": {
     "dev": "next dev",
