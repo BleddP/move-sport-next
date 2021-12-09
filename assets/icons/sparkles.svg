@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="544px" height="544px" viewBox="0 0 544 544" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>sparkles-sharp</title>
+    <defs>
+        <filter x="-4.2%" y="-4.2%" width="108.4%" height="108.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4765625 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="79.317399%" y1="105.656027%" x2="44.7188839%" y2="38.2588934%" id="linearGradient-2">
+            <stop stop-color="#4B0DFC" offset="0%"></stop>
+            <stop stop-color="#821EFE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-502.000000, -175.000000)" fill="url(#linearGradient-2)" fill-rule="nonzero">
+            <g id="sparkles-sharp" filter="url(#filter-1)" transform="translate(518.000000, 191.000000)">
+                <path d="M208,512 L155.62,372.38 L16,320 L155.62,267.62 L208,128 L260.38,267.62 L400,320 L260.38,372.38 L208,512 Z M88,176 L64.43,111.57 L0,88 L64.43,64.43 L88,0 L111.57,64.43 L176,88 L111.57,111.57 L88,176 Z M400,256 L368.89,175.11 L288,144 L368.89,112.89 L400,32 L431.11,112.89 L512,144 L431.11,175.11 L400,256 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

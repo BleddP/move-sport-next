@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div>
-      <Hero type='homepage' image={image} />
+      <Hero type='homepage' image={image} title='Start vandaag nog jou mentale traject' button={true} />
       <About/>
       <MentalTraining />
       <Services />

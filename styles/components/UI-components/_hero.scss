@@ -1,9 +1,17 @@
 .hero {
-    height: 80vh;
+    height: 200px;
     background: rgba(0, 0, 0, 0.5);
     background-blend-mode: darken;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    @include breakpoint(md) {
+        height: 40vh;
+    }
+
+    &.homepage {
+        height: 80vh;
+    }
 
     .container {
         height: 100%;

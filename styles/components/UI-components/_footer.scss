@@ -1,4 +1,82 @@
 .footer {
+  background-color: $dark;
+  width: 100%;
+  border-bottom: 1px solid rgb(79, 79, 79);
+  padding: 12px 0;
+  @include breakpoint(md) {
+    padding: 48px 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    @include breakpoint(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    &__navigation {
+      display: flex;
+      flex-direction: column;
+      h4, a {
+        color: whitesmoke;
+        margin: 6px 0;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        filter: invert(100%) brightness(150%);
+      }
+    }
+
+    &__callback {
+      h4, span, a, p {
+        color: whitesmoke;
+      }
+      span {
+        @extend h4;
+        font-weight: bold;
+      }
+      p {
+        margin-top: 12px;
+        font-size: 14px;
+      }
+
+      form {
+        background-color: whitesmoke;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        height: 40px;
+        border-radius: 25px;
+        padding: 6px 12px;
+
+        input {
+          background-color: whitesmoke;
+          height: 100%;
+          width: 200px;
+          border: none;
+          outline: none;
+        }
+
+        button {
+          @extend .btn;
+          @extend .btn--primary;
+          height: 100%;
+        }
+      }
+    }
+  }
+
   &__strip {
     height: auto;
     background-color: $dark;

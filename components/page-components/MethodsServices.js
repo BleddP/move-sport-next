@@ -1,9 +1,13 @@
-// Components
-import Card from "@components/ui-components/Card";
+// Next
+import Image from 'next/image'
 
+// Components
+import Button from '@ui/Button'
+
+// Content
 import Portrait from "@assets/content/chloe.jpeg";
 
-const Services = () => {
+const MethodsServices = () => {
   const services = [
     {
       id: 1,
@@ -39,15 +43,27 @@ const Services = () => {
       },
     },
   ];
+
   return (
     <section className="container container--96">
-      <div className="services">
+      <div className="our-methods__services">
         {services.map((service) => {
-          return <Card data={service} key={service.id} />;
+          return (
+            <div className="service" key={service.id}>
+              <div className="service__image">
+                <Image src={Portrait} alt={service.title} />
+              </div>
+              <div className="service__content">
+                  <h4>{service.title}</h4>
+                  <p>{service.content}</p>
+                  <Button to={service.button.to} text={service.button.text} type='primary' />
+              </div>
+            </div>
+          );
         })}
       </div>
     </section>
   );
 };
 
-export default Services;
+export default MethodsServices;
