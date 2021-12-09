@@ -6,6 +6,7 @@ h5,
 h6 {
   font-family: "FreightSans Pro", "Arial", sans-serif;
   color: $dark;
+  margin: 0;
 }
 
 *:not(h1, h2, h3, h4, h5, h6) {
@@ -20,22 +21,27 @@ a {
 h1 {
   font-size: 32px;
   line-height: 1.2em;
+  margin-bottom: 24px;
   @include breakpoint(md) {
     font-size: 50px;
+    margin-bottom: 48px;
   }
 }
 
 h2 {
   font-size: 28px;
   line-height: 1.2em;
+  margin-bottom: 24px;
   @include breakpoint(md) {
     font-size: 36px;
+    margin-bottom: 48px;
   }
 }
 
 h3 {
   font-size: 24px;
   line-height: 1.4em;
+  margin-bottom: 24px;
   @include breakpoint(md) {
     font-size: 32px;
   }
@@ -44,6 +50,7 @@ h3 {
 h4 {
   font-size: 20px;
   line-height: 1.4em;
+  margin-bottom: 24px;
   @include breakpoint(md) {
     font-size: 24px;
   }
@@ -53,7 +60,18 @@ p,
 span {
   font-size: 14px;
   line-height: 1.4em;
+  margin: 0;
+  margin-bottom: 12px;
+
   @include breakpoint(md) {
     font-size: 18px;
+    margin-bottom: 24px;
   }
+}
+
+.gradient-header {
+  background: $branded-gradient;
+  background-size: contain;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

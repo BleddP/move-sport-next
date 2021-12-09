@@ -6,7 +6,7 @@ import Icon from "@assets/icons/facebook.svg";
 const MentalTraining = () => {
   return (
     <section className="mental-training">
-      <div className="container">
+      <div className="container container--96">
         <div className="mental-training__content">
           <h2>Mentale Training</h2>
           <div className="mental-training__usps">

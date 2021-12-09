@@ -3,22 +3,18 @@ import Image from "next/image";
 // Components
 import Button from "@UI/Button";
 
-// Content
-import Portrait from "@assets/content/chloe.jpeg";
-
-const Card = () => {
+const Card = ({data}) => {
   return (
     <div className="card">
       <div className="card__image">
-        <Image src={Portrait} />
+        <Image src={data.image} />
       </div>
       <div className="card__content">
-        <h4>Individueel</h4>
+        <h4 className='gradient-header'>{data.title}</h4>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
-          provident ab fuga nihil at suscipit officia quia cum harum accusamus.
+          {data.content}
         </p>
-        <Button to="/werkwijze/individueel/" text="Lees meer" type="primary" />
+        <Button to={data.button.to} text={data.button.text} type={data.button.type}/>
       </div>
     </div>
   );

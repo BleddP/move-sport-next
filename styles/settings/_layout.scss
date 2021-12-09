@@ -20,4 +20,18 @@ html, body {
     @include breakpoint(container) {
         margin: 0 auto;
     }
+
+    &--48 {
+        padding: 24px 0;
+        @include breakpoint(md) {
+            padding: 48px 0;
+        }
+    }
+
+    &--96 {
+        padding: 48px 0;
+        @include breakpoint(md) {
+            padding: 96px 0;
+        }
+    }
 }

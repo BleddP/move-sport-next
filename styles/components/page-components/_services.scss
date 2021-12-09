@@ -1,0 +1,15 @@
+.services {
+  padding: 48px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+
+    .card {
+      max-width: 80%;
+      justify-self: center;
+    }
+  }
+}
