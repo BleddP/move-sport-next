@@ -25,7 +25,7 @@ const MobileMenu = ({ open, menu }) => {
             return (
               <div key={nav.id} className="nav__mobile__menu__children">
                 <div>
-                  <Link href={nav.to}>
+                  <Link href={nav.to} passHref>
                     <a className="nav__mobile__menu__item">{nav.menu}</a>
                   </Link>
                   <MobileMenuChildren open={submenu} data={nav.children} />
@@ -40,7 +40,7 @@ const MobileMenu = ({ open, menu }) => {
             );
           } else {
             return (
-              <Link key={nav.id} href={nav.to}>
+              <Link key={nav.id} href={nav.to} passHref>
                 <a className="nav__mobile__menu__item">{nav.menu}</a>
               </Link>
             );

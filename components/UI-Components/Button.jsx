@@ -6,7 +6,7 @@ import Chevron from "@assets/icons/chevron-right.svg";
 
 const Button = ({ to, type, text }) => {
   return (
-    <Link href={to}>
+    <Link href={to} passHref>
       <button
         className={
           type === "secondary" ? "btn btn--secondary" : "btn btn--primary"
