@@ -1,0 +1,64 @@
+.events {
+  &__intro {
+    max-width: 50%;
+  }
+
+  &__overview {
+    max-width: 800px;
+    margin: 0 auto;
+
+    &__filter {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__events {
+      .events-per-month {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        @include breakpoint(md) {
+          grid-template-columns: 1fr 2fr;
+          gap: 24px;
+        }
+
+        .month {
+          display: flex;
+          justify-content: flex-end;
+          padding-right: 48px;
+        }
+
+        .events-overview {
+          border-left: 1px solid $dark;
+          padding-left: 48px;
+
+          .event-info {
+            display: flex;
+            padding: 24px 0;
+            &:first-child {
+              padding-top: 0;
+            }
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+
+            &__icon {
+            }
+
+            &__content {
+              display: flex;
+              flex-direction: column;
+              margin-left: 24px;
+              h4,
+              span {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
