@@ -1,0 +1,22 @@
+.footer {
+  &__strip {
+    height: 60px;
+    background-color: $dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+
+    span,
+    p,
+    a {
+      color: whitesmoke;
+      margin: 0;
+    }
+    &__socials {
+      a {
+        margin: 0 6px;
+      }
+    }
+  }
+}

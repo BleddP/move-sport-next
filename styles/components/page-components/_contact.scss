@@ -1,0 +1,19 @@
+.contact {
+  max-width: 100%;
+  @include breakpoint(lg) {
+    max-width: 50%;
+  }
+
+  address {
+    display: flex;
+    flex-direction: column;
+    font-style: initial;
+    margin-bottom: 24px;
+    @include breakpoint(lg) {
+        margin-bottom: 48px;
+    }
+    span {
+        margin: 0;
+    }
+  }
+}

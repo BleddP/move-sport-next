@@ -1,13 +1,72 @@
 .clients {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    @include breakpoint(lg) {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-    }
-    
-    &__reviews {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
 
+  &__content {
+    padding-right: 48px;
+    border-right: 1px solid #979797;
+  }
+
+  &__reviews {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    // CSS Grid/Flexbox bug size workaround for Swiper
+    // @see https://github.com/kenwheeler/slick/issues/982
+    min-height: 0;
+    min-width: 0;
+
+    .review {
+      padding-left: 48px;
+      &__header {
+        display: flex;
+        align-items: center;
+
+        &__image {
+          width: 75px;
+          height: 75px;
+          border-radius: 75px;
+          overflow: hidden;
+          margin-right: 24px;
+        }
+
+        &__client {
+          display: flex;
+          flex-direction: column;
+          span {
+            margin: 0;
+          }
+        }
+
+        &__name {
+          @extend h4;
+          font-weight: bold;
+        }
+
+        &__title {
+          font-size: 14px;
+        }
+      }
+
+      &__tagline {
+        @extend h4;
+        @extend .gradient-header;
+        font-weight: 600;
+        margin: 12px 0;
+        &::before {
+          content: open-quote;
+          margin-right: 3px;
+        }
+        &::after {
+          content: close-quote;
+          margin-left: 3px;
+        }
+      }
     }
+  }
 }
