@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="448px" height="416px" viewBox="0 0 448 416" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>pulse-outline</title>
+    <defs>
+        <linearGradient x1="13.3654044%" y1="0%" x2="104.417534%" y2="90.7562553%" id="linearGradient-1">
+            <stop stop-color="#821EFE" offset="0%"></stop>
+            <stop stop-color="#4B0DFC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop" transform="translate(-532.000000, -1109.000000)" stroke-width="32">
+            <g id="pulse-outline" transform="translate(548.000000, 1125.000000)">
+                <polyline id="Path" stroke="url(#linearGradient-1)" points="0 256 64 256 128 0 192 384 256 160 288 256 352 256"></polyline>
+                <circle id="Oval" stroke="#4B0DFC" cx="384" cy="256" r="32"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

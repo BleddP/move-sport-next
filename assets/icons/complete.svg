@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="481px" height="321px" viewBox="0 0 481 321" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <defs>
+        <linearGradient x1="5.71722636%" y1="43.8376141%" x2="100%" y2="52.2210578%" id="linearGradient-1">
+            <stop stop-color="#821EFE" offset="0%"></stop>
+            <stop stop-color="#240DFC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Desktop" transform="translate(-522.000000, -1145.000000)" stroke="url(#linearGradient-1)" stroke-width="44">
+            <g id="checkmark-done-sharp" transform="translate(554.000000, 1176.000000)">
+                <path d="M418,0 L194,257 L102,165 M93,258 L0,165 M316,0 L189,146" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
