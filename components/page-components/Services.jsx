@@ -1,5 +1,5 @@
 // Components 
-import Card from '@ui/Card'
+import Card from '@components/ui-components/Card'
 
 import Portrait from "@assets/content/chloe.jpeg";
 

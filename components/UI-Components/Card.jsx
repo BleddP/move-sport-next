@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Components
-import Button from "@ui/Button";
+import Button from "@components/ui-components/Button";
 
 const Card = ({data}) => {
   return (

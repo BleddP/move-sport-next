@@ -1,4 +1,4 @@
-import Slider from '@ui/Slider/Slider'
+import Slider from '@components/ui-components/Slider/Slider'
 
 const Clients = () => {
   return (
