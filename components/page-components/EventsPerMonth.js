@@ -4,7 +4,7 @@ const EventsPerMonth = ({ events }) => {
   return (
     <div className="events-per-month">
       <div className="month">
-        <h2>{events.month.substring(0,3)} '{events.year.substring(2,4)}</h2>
+        <h2>{events.month.substring(0,3)} &apos;{events.year.substring(2,4)}</h2>
       </div>
       <div className="events-overview">
         {events.events.map((event) => {
