@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Router from 'next/router'
 
 const Submenu = ({ data }) => {
   return (
     <div className="nav__submenu">
       <Link href={data.to}>
-        <a className="nav__item">{data.menu}</a>
+        <a className={Router.pathname === data.to ? "nav__item active" : "nav__item"}>{data.menu}</a>
       </Link>
       <div className="nav__submenu submenu">
         {data.children.map((nav) => {

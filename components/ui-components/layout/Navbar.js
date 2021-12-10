@@ -45,22 +45,22 @@ const Navbar = () => {
     {
       id: 1,
       menu: "Over mij",
-      to: "/about/",
+      to: "/about",
     },
     {
       id: 2,
       menu: "Werkwijze",
-      to: "/werkwijze/",
+      to: "/werkwijze",
       children: [
         {
           id: 1,
           menu: "Individueel",
-          to: "/werkwijze/individueel/",
+          to: "/werkwijze/individueel",
         },
         {
           id: 2,
           menu: "Teams",
-          to: "/werkwijze/teams/",
+          to: "/werkwijze/teams",
         },
         {
           id: 3,
@@ -72,12 +72,12 @@ const Navbar = () => {
     {
       id: 3,
       menu: "Socials",
-      to: "/socials/",
+      to: "/socials",
     },
     {
       id: 4,
       menu: "Contact",
-      to: "/contact/",
+      to: "/contact",
     },
   ];
 
@@ -113,7 +113,7 @@ const Navbar = () => {
                 } else {
                   return (
                     <Link key={nav.id} href={nav.to}>
-                      <a className="nav__item">{nav.menu}</a>
+                      <a className={Router.pathname === nav.to ? "nav__item active" : 'nav__item'}>{nav.menu}</a>
                     </Link>
                   );
                 }
