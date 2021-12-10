@@ -3,15 +3,26 @@ import Image from "next/image";
 
 // Libs
 import moment from "moment";
+import { useSpring, animated } from 'react-spring'
 
 // Icons
 import Calendar from "@assets/icons/calendar.svg";
 import Article from "@assets/icons/article.svg";
 import Blog from "@assets/icons/blog.svg";
 
-const Event = ({ event }) => {
+const Event = ({ event, index }) => {
 
-  console.log(event.type)
+  const transition = useSpring({ 
+    delay: index * 200,
+    from: {
+      opacity: 0,
+      y: 48 
+    },
+    to: {
+      opacity: 1,
+      y: 0
+    }
+   })
 
   let icon = Calendar;
   switch (event.type) {
@@ -27,7 +38,7 @@ const Event = ({ event }) => {
   }
 
   return (
-    <div key={event.id} className="event-info">
+    <animated.div style={transition} key={event.id} className="event-info">
       <div className="event-info__icon">
         <Image src={icon} width={48} height={48} />
       </div>
@@ -36,11 +47,12 @@ const Event = ({ event }) => {
         <span>Evenement: {moment(event.date).format("DD MMMM YYYY")}</span>
         <span>{event.location}</span>
       </div>
-    </div>
+    </animated.div>
   );
 };
 
 const EventsPerMonth = ({ events }) => {
+
   return (
     <div className="events-per-month">
       <div className="month">
@@ -49,8 +61,8 @@ const EventsPerMonth = ({ events }) => {
         </h2>
       </div>
       <div className="events-overview">
-        {events.events.map((event) => {
-          return <Event key={event.id} event={event} />;
+        {events.events.map((event, index) => {
+          return <Event key={event.id} event={event} index={index} />;
         })}
       </div>
     </div>

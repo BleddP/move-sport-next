@@ -4,7 +4,9 @@ html, body {
 }
 
 .container {
-    max-width: 1366px;
+    max-width: 1360px;
+    margin: 0 12px;
+
     @include breakpoint(xs) {
         margin: 0 12px;
     }
