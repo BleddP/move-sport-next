@@ -1,0 +1,44 @@
+.contact-page {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+    }
+    @include breakpoint(lg) {
+      gap: 96px;
+    }
+  }
+
+  &__socials {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    a {
+      margin: 0 6px;
+      background: $branded-gradient;
+      padding: 6px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    a {
+      width: fit-content;
+      margin: 3px 0;
+      @include breakpoint(md) {
+        margin: 6px 0;
+      }
+      span {
+        margin-left: 12px;
+        transform: translateY(6px);
+      }
+    }
+  }
+}

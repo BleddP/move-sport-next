@@ -1,8 +1,6 @@
 .contact {
   max-width: 100%;
-  @include breakpoint(lg) {
-    max-width: 50%;
-  }
+  text-align: center;
 
   address {
     display: flex;
