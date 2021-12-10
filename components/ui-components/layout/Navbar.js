@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // Next
 import Link from "next/link";
 import Image from "next/image";
+import Router from "next/router";
 
 // Components
 import Submenu from "./Submenu";
@@ -19,14 +20,27 @@ import iconLI from "@assets/icons/linkedin.svg";
 const Navbar = () => {
   // Menu State
   const [open, setOpen] = useState(false);
-  const setOpenState = () => {
-    if (open) {
-      document.body.style.overflow = "auto";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
-    setOpen(!open);
+  const openMenu = () => {
+    setOpen(true);
+    document.body.style.overflow = "hidden";
   };
+
+  const closeMenu = () => {
+    setOpen(false);
+    document.body.style.overflow = "auto";
+  };
+  const setOpenState = () => {
+    if (!open) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  Router.events.on("routeChangeComplete", () => {
+    closeMenu();
+  });
+
   const menu = [
     {
       id: 1,
@@ -83,21 +97,7 @@ const Navbar = () => {
   }, []);
 
   // Mobile Navbar
-  if (viewport < 600) {
-    return (
-      <header className="header">
-        <div className="header__container">
-          <div className="header__logo">
-            <Image src={Logo} height={50} />
-          </div>
-          <div className="header__navigation">
-            <MenuButton setOpenState={setOpenState} open={open} />
-            <MobileMenu open={open} menu={menu} />
-          </div>
-        </div>
-      </header>
-    );
-  } else {
+  if (viewport > 600) {
     // Desktop Navbar
     return (
       <header className="header">
@@ -142,6 +142,20 @@ const Navbar = () => {
                 <Image src={iconLI} />
               </a>
             </div>
+          </div>
+        </div>
+      </header>
+    );
+  } else {
+    return (
+      <header className="header">
+        <div className="header__container">
+          <div className="header__logo">
+            <Image src={Logo} height={50} />
+          </div>
+          <div className="header__navigation">
+            <MenuButton setOpenState={setOpenState} open={open} />
+            <MobileMenu open={open} menu={menu} />
           </div>
         </div>
       </header>
