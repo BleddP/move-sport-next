@@ -1,17 +1,19 @@
+import moment from 'moment'
+
 const EventsPerMonth = ({ events }) => {
   return (
     <div className="events-per-month">
       <div className="month">
-        <h2>Nov '21</h2>
+        <h2>{events.month.substring(0,3)} '{events.year.substring(2,4)}</h2>
       </div>
       <div className="events-overview">
-        {events.map((event) => {
+        {events.events.map((event) => {
           return (
             <div key={event.id} className="event-info">
               <div className="event-info__icon">Icon</div>
               <div className="event-info__content">
                 <h4>{event.title}</h4>
-                <span>Evenement: 21 November 2021</span>
+                <span>Evenement: {moment(event.date).format('DD MMMM YYYY')}</span>
                 <span>{event.location}</span>
               </div>
             </div>

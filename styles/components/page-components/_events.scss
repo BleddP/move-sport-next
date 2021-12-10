@@ -15,6 +15,7 @@
 
     &__events {
       .events-per-month {
+        margin: 48px 0;
         display: grid;
         grid-template-columns: 1fr;
         gap: 12px;

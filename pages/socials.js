@@ -19,11 +19,29 @@ const Socials = () => {
             title: 'Workshop omgaan met spanning',
             subtitle: '',
             location: 'ArTez Arnhem & Nijmegen',
-            date: new Date('09-09-2021'),
+            date: new Date('09-24-2021'),
             url: ''
         },
         {
             id: 3,
+            type: 'event',
+            title: 'Workshop omgaan met spanning',
+            subtitle: '',
+            location: 'ArTez Arnhem & Nijmegen',
+            date: new Date('05-12-2021'),
+            url: ''
+        },
+        {
+            id: 4,
+            type: 'article',
+            title: 'Workshop omgaan met spanning',
+            subtitle: '',
+            location: 'ArTez Arnhem & Nijmegen',
+            date: new Date('09-09-2021'),
+            url: ''
+        },
+        {
+            id: 5,
             type: 'article',
             title: 'Lees meer over je welzijn',
             subtitle: '5-min read',
