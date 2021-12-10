@@ -1,5 +1,9 @@
+import NavBarBg from '@ui/layout/NavBarBg'
 import Services from '@components/page-components/Services'
 import Events from '@components/page-components/Events'
+import Clients from '@components/page-components/Clients'
+import PartnerStrip from '@ui/PartnerStrip'
+import Footer from '@ui/layout/Footer'
 
 const Socials = () => {
 
@@ -42,7 +46,7 @@ const Socials = () => {
         },
         {
             id: 5,
-            type: 'article',
+            type: 'blog',
             title: 'Lees meer over je welzijn',
             subtitle: '5-min read',
             location: 'ArTez Arnhem & Nijmegen',
@@ -53,8 +57,12 @@ const Socials = () => {
 
     return (
         <main>
+            <NavBarBg />
             <Services />
             <Events events={events} />
+            <Clients />
+            <PartnerStrip />
+            <Footer/>
         </main>
     )
 }

@@ -15,7 +15,7 @@ const Events = ({ events }) => {
   });
 
   const parsedDates = events.map((event) => {
-    const day = moment(event.date).format("DD");
+    const day = moment(event.date).format(" DD");
     const month = moment(event.date).format("MMMM");
     const year = moment(event.date).format("YYYY");
     return {
