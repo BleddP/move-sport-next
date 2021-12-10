@@ -1,7 +1,9 @@
 import Image from "next/image";
 
 // Content
-import Icon from "@assets/icons/facebook.svg";
+import Pulse from "@assets/icons/pulse.svg";
+import Sparkles from "@assets/icons/sparkles.svg";
+import Complete from "@assets/icons/complete.svg";
 
 const MentalTraining = () => {
   return (
@@ -11,7 +13,7 @@ const MentalTraining = () => {
           <h2>Mentale Training</h2>
           <div className="mental-training__usps">
             <div className="usp">
-              <Image src={Icon} />
+              <Image width={96} height={96} src={Sparkles} />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
                 magnam minus dolorem quae laborum animi voluptates corrupti
@@ -19,7 +21,7 @@ const MentalTraining = () => {
               </p>
             </div>
             <div className="usp">
-              <Image src={Icon} />
+              <Image width={96} height={96} src={Complete} />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
                 magnam minus dolorem quae laborum animi voluptates corrupti
@@ -27,7 +29,7 @@ const MentalTraining = () => {
               </p>
             </div>
             <div className="usp">
-              <Image src={Icon} />
+              <Image width={96} height={96} src={Pulse} />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
                 magnam minus dolorem quae laborum animi voluptates corrupti

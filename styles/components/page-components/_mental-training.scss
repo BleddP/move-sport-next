@@ -1,24 +1,28 @@
 .mental-training {
-    background-color: $dark;
-    padding: 48px 0;
-    * {
-        color: whitesmoke;
+  background-color: $dark;
+  padding: 48px 0;
+  * {
+    color: whitesmoke;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__usps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    @include breakpoint(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
     }
 
-    &__content {
-        text-align: center;
+    p {
+      margin-top: 24px;
+      @include breakpoint(md) {
+        margin-top: 48px;
+      }
     }
-
-    &__usps {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        @include breakpoint(md) {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-        }
-
-       
-
-    }
+  }
 }
