@@ -11,7 +11,7 @@ const Events = ({ events }) => {
   const [eventFilter, setEventFilter] = useState("");
 
   let filteredEvents = events;
-  filteredEvents = events.filter((event) => {
+  filteredEvents = events.filter((event: any) => {
     if (eventFilter !== "") {
       return event.type === eventFilter;
     } else {
@@ -19,12 +19,12 @@ const Events = ({ events }) => {
     }
   });
 
-  filteredEvents.sort(function (a, b) {
+  filteredEvents.sort(function (a: any, b: any) {
     return a.date - b.date;
   });
 
-  const parsedDates = filteredEvents.map((event) => {
-    const day = moment(event.date).format(" DD");
+  const parsedDates = filteredEvents.map((event: any) => {
+    const day = moment(event.date).format("DD");
     const month = moment(event.date).format("MMMM");
     const year = moment(event.date).format("YYYY");
     return {
@@ -38,13 +38,13 @@ const Events = ({ events }) => {
   });
 
   const allMonths = parsedDates.map(
-    (event) => `${event.parsedDate.month}-${event.parsedDate.year}`
+    (event: any) => `${event.parsedDate.month}-${event.parsedDate.year}`
   );
   const unique = [...new Set(allMonths)];
 
-  const perMonth = unique.map((date) => {
+  const perMonth = unique.map((date: string) => {
     const events = parsedDates.filter(
-      (event) => `${event.parsedDate.month}-${event.parsedDate.year}` === date
+      (event: any) => `${event.parsedDate.month}-${event.parsedDate.year}` === date
     );
     return {
       month: date.split("-")[0],
