@@ -5,6 +5,7 @@
       "@ui/*": ["components/ui-components/*"],
       "@components/*": ["components/*"],
       "@assets/*": ["assets/*"],
+      "@interfaces": ["interfaces/interfaces"]
     },
     "target": "es5",
     "lib": [

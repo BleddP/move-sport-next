@@ -43,7 +43,7 @@ const Services = () => {
     <section className="container container--96">
       <div className="services">
         {services.map((service) => {
-          return <Card data={service} key={service.id} />;
+          return <Card card={service} key={service.id} />;
         })}
       </div>
     </section>

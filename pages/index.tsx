@@ -1,5 +1,5 @@
 // Components
-import Hero from "@components/ui-components/Hero.tsx";
+import Hero from "@components/ui-components/Hero";
 import About from "@components/page-components/About";
 import MentalTraining from "@components/page-components/MentalTraining";
 import Services from "@components/page-components/Services";
@@ -16,7 +16,6 @@ const Home = ({page}) => {
       <Hero
         type="homepage"
         header={page.header}
-        title="Start vandaag nog jou mentale traject"
       />
       <About />
       <FadeIn>
@@ -47,7 +46,7 @@ export async function getServerSideProps(context: any) {
   const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homepage`)
   
   if (response.status && response.status < 300) {
-    console.log(response.data.data)
+    console.log(response.data.data.attributes)
     return {
       props: {
         page: response.data.data.attributes
