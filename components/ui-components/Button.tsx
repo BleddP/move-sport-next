@@ -20,7 +20,7 @@ const Button = ({ to, type, text, target }) => {
     );
   } else {
     return (
-      <a href={to} target="_blank">
+      <a href={to} target="_blank" rel="noreferrer">
         <button
           className={
             type === "secondary" ? "btn btn--secondary" : "btn btn--primary"
