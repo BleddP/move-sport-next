@@ -5,29 +5,38 @@ import MethodsServices from "@components/page-components/MethodsServices";
 import TextBlock from "@ui/TextBlock";
 import Footer from "@ui/layout/Footer";
 
-const Methods = () => {
-  const location = {
-    title: "Locatie",
-    content:
-      "Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je prestaties verbeteren? Dan ben je hier op het juiste adres. Mijn naam is Chloé Webers. Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je prestaties verbeteren? Dan ben je hier op het juiste adres. Mijn naam is Chloé Webers. Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je prestaties verbet",
-  };
-
-  const expenses = {
-    title: "Vergoedingen",
-    content:
-      "Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je prestaties verbeteren? Dan ben je hier op het juiste adres. Mijn naam is Chloé Webers. Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je prestaties verbeteren? Dan ben je hier op het juiste adres. Mijn naam is Chloé Webers. Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je prestaties verbet",
-  };
-
+const Methods = ({ page }) => {
   return (
     <div>
       <NavBarBg />
-      <OurMethods />
-      <MethodsServices />
-      <TextBlock data={location}/>
-      <TextBlock data={expenses}/>
-      <Footer/>
+      <OurMethods page={page} />
+      <MethodsServices services={page.services} />
+      <TextBlock data={page.location} />
+      <TextBlock data={page.expenses} />
+      <Footer />
     </div>
   );
 };
+
+// Libs
+import axios from "axios";
+
+// Fetch data from the server
+export async function getServerSideProps() {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/werkwijze`
+  );
+
+  if (response.status && response.status < 300) {
+    console.log(response.data.data.attributes);
+    return {
+      props: {
+        page: response.data.data.attributes,
+      },
+    };
+  } else {
+    console.log("Error: ", response);
+  }
+}
 
 export default Methods;

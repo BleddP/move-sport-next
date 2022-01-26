@@ -8,16 +8,14 @@ import Complete from "@assets/icons/complete.svg";
 
 
 
-const OurMethods = () => {
+const OurMethods = ({page}) => {
   return (
     <section className="container container--96">
       <div className="our-methods">
         <div className="our-methods__content">
-          <h1>Onze Werkwijze</h1>
+          <h1>{page.title}</h1>
           <p>
-            Wil jij het maximale uit jezelf halen? Mentaal sterker worden en je
-            prestaties verbeteren? Dan ben je hier op het juiste adres. Mijn
-            naam is Chloé Webers.
+           {page.intro}
           </p>
         </div>
         <div className="our-methods__grid">
