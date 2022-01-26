@@ -29,7 +29,7 @@ const Home = ({page}) => {
         <Clients clients={page.clients} />
       </FadeIn>
       <FadeIn>
-        <PartnerStrip />
+        <PartnerStrip partners={page.partners[0]} />
       </FadeIn>
       <FadeIn>
         <Contact />

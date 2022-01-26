@@ -1,52 +1,23 @@
-const PartnerStrip = () => {
-    return (
-        <div className='partners-strip'>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-            <div className='partner'>
-                <span className="partner__tooltip">Naam organisatie</span>
-                <img src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1" alt="nu.nl" />
-            </div>
-        </div>
-    )
-}
+const PartnerStrip = ({ partners }) => {
+  console.log("partners: ", partners.partners.data);
 
-export default PartnerStrip
+  const array = partners.partners.data;
+
+  return (
+    <div className="partners-strip">
+      {array.map((partner) => {
+        return (
+          <div key={partner.id} className="partner">
+            <span className="partner__tooltip">{partner.attributes.name}</span>
+            <img
+              src="https://www.nu.nl/static/img/atoms/images/logos/nu_logo.svg?v=1"
+              alt={partner.attributes.name}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default PartnerStrip;
