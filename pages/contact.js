@@ -12,7 +12,10 @@ import LinkedIn from "@assets/icons/linkedin.svg";
 import Phone from "@assets/icons/phone-portrait-outline.svg";
 import Email from "@assets/icons/mail-unread-outline.svg";
 
-const ContactPage = () => {
+const ContactPage = ({ page }) => {
+  const phone = page.contact.data.attributes.phone;
+  const email = page.contact.data.attributes.email;
+
   return (
     <main>
       <NavBarBg />
@@ -20,26 +23,19 @@ const ContactPage = () => {
         <div className="contact-page">
           <div className="contact-page__grid">
             <div>
-              <h1>Contact</h1>
-              <p>
-                Heb je een vraag of wil je een afspraak maken? Vul het
-                contactformulier in en ik neem zo snel mogelijk contact met je
-                op.
-              </p>
-              <p>
-                Je kunt ook direct contact opnemen via onderstaande gegevens.
-              </p>
+              <h1>{page.content.title}</h1>
+              <p>{page.content.content}</p>
               <div className="contact-page__contact">
                 <a href="#" target="_blank" referrerPolicy="noopener">
                   <Image src={Phone} width={24} height={24} />
-                  <span>123456789</span>
+                  <span>{phone}</span>
                 </a>
                 <a href="#" target="_blank" referrerPolicy="noopener">
                   <Image src={Email} width={24} height={24} />
-                  <span>info@movesportpsychologie.nl</span>
+                  <span>{email}</span>
                 </a>
               </div>
-                   <div className="contact-page__socials">
+              <div className="contact-page__socials">
                 <a href="#" target="_blank" referrerPolicy="noopener">
                   <Image src={Instagram} width={20} height={20} />
                 </a>
@@ -60,5 +56,25 @@ const ContactPage = () => {
     </main>
   );
 };
+
+// Libs
+import axios from "axios";
+
+// Fetch data from the server
+export async function getServerSideProps() {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/contact-page`
+  );
+
+  if (response.status && response.status < 300) {
+    return {
+      props: {
+        page: response.data.data.attributes,
+      },
+    };
+  } else {
+    console.log("Error: ", response);
+  }
+}
 
 export default ContactPage;

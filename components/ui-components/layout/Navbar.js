@@ -102,9 +102,11 @@ const Navbar = () => {
     return (
       <header className="header">
         <div className="header__container">
-          <div className="header__logo">
-            <Image src={Logo} height={50} />
-          </div>
+          <Link href="/">
+            <div className="header__logo">
+              <Image src={Logo} height={50} />
+            </div>
+          </Link>
           <div className="header__navigation">
             <nav className="nav">
               {menu.map((nav) => {
@@ -113,7 +115,15 @@ const Navbar = () => {
                 } else {
                   return (
                     <Link key={nav.id} href={nav.to}>
-                      <a className={Router.pathname === nav.to ? "nav__item active" : 'nav__item'}>{nav.menu}</a>
+                      <a
+                        className={
+                          Router.pathname === nav.to
+                            ? "nav__item active"
+                            : "nav__item"
+                        }
+                      >
+                        {nav.menu}
+                      </a>
                     </Link>
                   );
                 }

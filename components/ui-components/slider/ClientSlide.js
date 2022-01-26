@@ -7,7 +7,7 @@ const ClientSlide = ({ slide }) => {
     <div className="review">
       <div className="review__header">
         <div className="review__header__image">
-          <Image src={assets + slide.image.data.attributes.url} width={50} height={50} fill="responsive" />
+          <Image src={assets + slide.image.data.attributes.url} width={75} height={75} fill="responsive" />
         </div>
         <div className="review__header__client">
           <span className="review__header__name">{slide.client_name}</span>
