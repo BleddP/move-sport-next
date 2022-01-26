@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 // Components
 import ClientSlide from "./ClientSlide";
 
-const Slider = () => {
+const Slider = ({ slides }) => {
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -22,18 +22,13 @@ const Slider = () => {
         delay: 2500,
       }}
     >
-      <SwiperSlide>
-        <ClientSlide />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ClientSlide />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ClientSlide />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ClientSlide />
-      </SwiperSlide>
+      {slides.map((slide) => {
+        return (
+          <SwiperSlide key={slide.id}>
+            <ClientSlide slide={slide.attributes} />
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };

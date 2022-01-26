@@ -1,19 +1,17 @@
 import Slider from '@ui/slider/Slider'
 
-const Clients = () => {
+const Clients = ({clients}) => {
   return (
     <section className="container container--96">
       <div className="clients">
         <div className='clients__content'>
-          <h2>Partners & Klanten</h2>
+          <h2>{clients.title}</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut facere
-            alias dignissimos quae amet quis modi iusto, ex exercitationem
-            placeat!
+            {clients.intro}
           </p>
         </div>
         <div className='clients__reviews'>
-            <Slider />
+            <Slider slides={clients.clients.data} />
         </div>
       </div>
     </section>

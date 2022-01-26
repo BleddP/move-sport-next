@@ -11,6 +11,7 @@ import Contact from "@components/page-components/Contact";
 import FadeIn from "@components/animated-components/FadeIn";
 
 const Home = ({page}) => {
+  console.log({page})
   return (
     <main>
       <Hero
@@ -25,7 +26,7 @@ const Home = ({page}) => {
         <Services services={page.services.services.data} />
       </FadeIn>
       <FadeIn>
-        <Clients />
+        <Clients clients={page.clients} />
       </FadeIn>
       <FadeIn>
         <PartnerStrip />

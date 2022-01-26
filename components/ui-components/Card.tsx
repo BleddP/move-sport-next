@@ -8,9 +8,7 @@ import Button from "@components/ui-components/Button";
 
 const Card = (props: any) => {
   const card: CardInterface = props.card;
-
-  console.log('Card: ', card)
-
+  
   return (
     <div className="card">
       <div className="card__image">
