@@ -43,9 +43,10 @@ const Event = ({ event, index }) => {
         <Image src={icon} width={48} height={48} />
       </div>
       <div className="event-info__content">
-        <h4>{event.title}</h4>
-        <span>Evenement: {moment(event.date).format("DD MMMM YYYY")}</span>
-        <span>{event.location}</span>
+        <h4>{event.attributes.title}</h4>
+        <span>Evenement: {moment(event.attributes.date).format("DD MMMM YYYY")}</span>
+        <span>{event.attributes.location && event.attributes.location}</span>
+        <small>{event.attributes.short_description}</small>
       </div>
     </animated.div>
   );

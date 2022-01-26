@@ -12,21 +12,23 @@ const Events = ({ events }) => {
 
   let filteredEvents = events;
   filteredEvents = events.filter((event: any) => {
+    const timestamp = new Date(event.attributes.date)
+    event.attributes.timestamp = timestamp
     if (eventFilter !== "") {
-      return event.type === eventFilter;
+      return event.attributes.type === eventFilter;
     } else {
       return event;
     }
   });
 
-  filteredEvents.sort(function (a: any, b: any) {
-    return a.date - b.date;
+  const filterByDate = filteredEvents.sort(function (a: any, b: any) {
+    return a.attributes.timestamp - b.attributes.timestamp;
   });
 
-  const parsedDates = filteredEvents.map((event: any) => {
-    const day = moment(event.date).format("DD");
-    const month = moment(event.date).format("MMMM");
-    const year = moment(event.date).format("YYYY");
+  const parsedDates = filterByDate.map((event: any) => {
+    const day = moment(event.attributes.date).format("DD");
+    const month = moment(event.attributes.date).format("MMMM");
+    const year = moment(event.attributes.date).format("YYYY");
     return {
       ...event,
       parsedDate: {
