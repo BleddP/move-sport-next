@@ -6,7 +6,6 @@ import TextBlock from "@ui/TextBlock";
 import Footer from "@ui/layout/Footer";
 
 const Methods = ({ page }) => {
-  console.log('Werkwijze page: ', page)
   return (
     <div>
       <NavBarBg />

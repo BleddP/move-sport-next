@@ -1,14 +1,10 @@
 import Image from "next/image";
 
-// Icons
-import Sparkles from "@assets/icons/sparkles.svg";
-import Evaluate from "@assets/icons/evaluate.svg";
-import Pulse from "@assets/icons/pulse.svg";
-import Complete from "@assets/icons/complete.svg";
-
-
-
 const OurMethods = ({page}) => {
+
+  const methods = page.methods.methods.data
+  const assets = process.env.NEXT_PUBLIC_ASSET_URL
+
   return (
     <section className="container container--96">
       <div className="our-methods">
@@ -19,50 +15,19 @@ const OurMethods = ({page}) => {
           </p>
         </div>
         <div className="our-methods__grid">
-          <div className="method">
-            <Image className="method__image" src={Sparkles} alt='sparlkes' width={300} height={300}/>
-            <div className="method__content">
-              <h4>Intake</h4>
-              <p>
-                Wil jij het maximale uit jezelf halen? Mentaal sterker worden en
-                je prestaties verbeteren? Dan ben je hier op het juiste adres.
-                Mijn naam is Chloé Webers.
-              </p>
+          {methods.map((method) => {
+            return (
+              <div key={method.id} className="method">
+              <Image className="method__image" src={assets + method.attributes.icon.data.attributes.url} alt='sparlkes' width={300} height={300}/>
+              <div className="method__content">
+                <h4>{method.attributes.title}</h4>
+                <p>
+                  {method.attributes.content}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="method">
-            <Image className="method__image" src={Evaluate} alt='sparlkes' width={300} height={300}/>
-            <div className="method__content">
-              <h4>Planning</h4>
-              <p>
-                Wil jij het maximale uit jezelf halen? Mentaal sterker worden en
-                je prestaties verbeteren? Dan ben je hier op het juiste adres.
-                Mijn naam is Chloé Webers.
-              </p>
-            </div>
-          </div>
-          <div className="method">
-            <Image className="method__image" src={Pulse} alt='sparlkes' width={300} height={300}/>
-            <div className="method__content">
-              <h4>Training</h4>
-              <p>
-                Wil jij het maximale uit jezelf halen? Mentaal sterker worden en
-                je prestaties verbeteren? Dan ben je hier op het juiste adres.
-                Mijn naam is Chloé Webers.
-              </p>
-            </div>
-          </div>
-          <div className="method">
-            <Image className="method__image" src={Complete} alt='sparlkes' width={300} height={300}/>
-            <div className="method__content">
-              <h4>Evaluatie</h4>
-              <p>
-                Wil jij het maximale uit jezelf halen? Mentaal sterker worden en
-                je prestaties verbeteren? Dan ben je hier op het juiste adres.
-                Mijn naam is Chloé Webers.
-              </p>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     </section>
