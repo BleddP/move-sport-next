@@ -17,12 +17,12 @@ const Home = ({page}) => {
         type="homepage"
         header={page.header}
       />
-      <About />
+      <About data={page.about_me} />
       <FadeIn>
-        <MentalTraining />
+        <MentalTraining data={page.mental_training} />
       </FadeIn>
       <FadeIn>
-        <Services />
+        <Services services={page.services.services.data} />
       </FadeIn>
       <FadeIn>
         <Clients />
@@ -46,7 +46,7 @@ export async function getServerSideProps(context: any) {
   const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homepage`)
   
   if (response.status && response.status < 300) {
-    console.log(response.data.data.attributes)
+    console.log(response.data.data.attributes.services.services.data[0])
     return {
       props: {
         page: response.data.data.attributes
