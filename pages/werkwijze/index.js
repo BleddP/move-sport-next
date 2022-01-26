@@ -6,11 +6,12 @@ import TextBlock from "@ui/TextBlock";
 import Footer from "@ui/layout/Footer";
 
 const Methods = ({ page }) => {
+  console.log('Werkwijze page: ', page)
   return (
     <div>
       <NavBarBg />
       <OurMethods page={page} />
-      <MethodsServices services={page.services} />
+      <MethodsServices services={page.services.services.data} />
       <TextBlock data={page.location} />
       <TextBlock data={page.expenses} />
       <Footer />
@@ -28,7 +29,6 @@ export async function getServerSideProps() {
   );
 
   if (response.status && response.status < 300) {
-    console.log(response.data.data.attributes);
     return {
       props: {
         page: response.data.data.attributes,
