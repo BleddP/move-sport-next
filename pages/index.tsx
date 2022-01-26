@@ -10,6 +10,7 @@ import PartnerStrip from "@components/ui-components/PartnerStrip";
 import FadeIn from "@components/animated-components/FadeIn";
 
 const Home = ({page}) => {
+
   return (
     <main>
       <Hero
