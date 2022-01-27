@@ -6,21 +6,22 @@ import { Header } from '@interfaces'
 
 // Components
 import Button from "@components/ui-components/Button";
+import renderImage from "@components/helper-functions/renderImage";
 
 // Logos
 import VSPN from "@assets/logos/vspn.svg";
 
 
 const Hero = (props: any) => {
-  const image = process.env.NEXT_PUBLIC_BASE_URL + props.header.header_image.data.attributes.formats.large.url
-
   const header: Header = props.header
   const type: string = props.type
+
+  const image = renderImage(props.header.header_image.data.attributes)
 
   return (
     <div
       className={type === "homepage" ? "hero homepage" : "hero"}
-      style={{ backgroundImage: `url('${image}')` }}
+      style={{ backgroundImage: `url('${image.url}')` }}
     >
       <div className="container">
         <div className="hero__content">

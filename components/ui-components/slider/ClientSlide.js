@@ -1,13 +1,14 @@
 import Image from "next/image";
+import renderImage from "@components/helper-functions/renderImage";
 
 const ClientSlide = ({ slide }) => {
-  const assets = process.env.NEXT_PUBLIC_ASSET_URL
+  const image = renderImage(slide.image.data.attributes)
 
   return (
     <div className="review">
       <div className="review__header">
         <div className="review__header__image">
-          <Image src={assets + slide.image.data.attributes.url} width={75} height={75} fill="responsive" />
+          <Image src={image.url} width={75} height={75} fill="responsive" />
         </div>
         <div className="review__header__client">
           <span className="review__header__name">{slide.client_name}</span>
