@@ -1,0 +1,26 @@
+.accordion {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    &.open {
+      .accordion__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__icon {
+    transform: rotate(0deg);
+    transition: transform 0.35s ease;
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.35s ease;
+  }
+}
