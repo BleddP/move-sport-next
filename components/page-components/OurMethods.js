@@ -1,9 +1,9 @@
 import Image from "next/image";
+import renderImage from '../helper-functions/renderImage'
 
 const OurMethods = ({page}) => {
 
   const methods = page.methods.methods.data
-  const assets = process.env.NEXT_PUBLIC_ASSET_URL
 
   return (
     <section className="container container--96">
@@ -16,9 +16,10 @@ const OurMethods = ({page}) => {
         </div>
         <div className="our-methods__grid">
           {methods.map((method) => {
+            const image = renderImage(method.attributes.icon.data.attributes)
             return (
               <div key={method.id} className="method">
-              <Image className="method__image" src={assets + method.attributes.icon.data.attributes.url} alt='sparlkes' width={300} height={300}/>
+              <Image className="method__image" src={image.url} alt={method.attributes.title} width={300} height={300}/>
               <div className="method__content">
                 <h4>{method.attributes.title}</h4>
                 <p>
