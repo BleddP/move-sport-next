@@ -6,14 +6,19 @@ import {CardInterface} from '@interfaces'
 // Components
 import Button from "@components/ui-components/Button";
 
+// Libs
+import renderImage from '../helper-functions/renderImage'
+
 const Card = (props: any) => {
   const card: CardInterface = props.card;
   const assets: string = process.env.NEXT_PUBLIC_ASSET_URL
+
+  const image = renderImage(card.image.data.attributes)
   
   return (
     <div className="card">
       <div className="card__image">
-        <Image src={assets + card.image.data.attributes.url} alt={card.title} width={750} height={500} layout="intrinsic" />
+        <Image src={image.url} alt={card.title} width={750} height={500} layout="intrinsic" />
       </div>
       <div className="card__content">
         <h4 className="gradient-header">{card.title}</h4>
