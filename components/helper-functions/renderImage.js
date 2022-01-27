@@ -8,24 +8,24 @@ const renderImage = (imageObject) => {
     image = {
       ...image,
       url: assetsPath + imageObject.url,
-      formats: {
-        large: {
-          ...image.formats.large,
-          url: assetsPath + imageObject.formats.large.url,
-        },
-        medium: {
-          ...image.formats.medium,
-          url: assetsPath + imageObject.formats.medium.url,
-        },
-        small: {
-          ...image.formats.small,
-          url: assetsPath + imageObject.formats.small.url,
-        },
-        thumbnail: {
-          ...image.formats.thumbnail,
-          url: assetsPath + imageObject.formats.thumbnail.url,
-        },
-      },
+      // formats: {
+      //   large: {
+      //     ...image.formats.large,
+      //     url: assetsPath + imageObject.formats.large.url,
+      //   },
+      //   medium: {
+      //     ...image.formats.medium,
+      //     url: assetsPath + imageObject.formats.medium.url,
+      //   },
+      //   small: {
+      //     ...image.formats.small,
+      //     url: assetsPath + imageObject.formats.small.url,
+      //   },
+      //   thumbnail: {
+      //     ...image.formats.thumbnail,
+      //     url: assetsPath + imageObject.formats.thumbnail.url,
+      //   },
+      // },
     };
   }
 
