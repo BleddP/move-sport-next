@@ -1,50 +1,117 @@
 // NextJS
+import Image from "next/image";
 
 // Components
 import NavBarBg from "@components/ui-components/layout/NavBarBg";
 import Hero from "@components/ui-components/Hero";
 import Accordion from "@components/ui-components/Accordion";
+import Approaches from "@components/page-components/Approaches";
 
 const Method = ({ page }) => {
+
+  const offers = [
+    {
+      id: 1,
+      title: 'Traject 1',
+      content: 'Some content',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+      button: {
+        to: '/contact',
+        text: 'Neem contact op',
+        type: 'primary',
+        target: 'internal'
+      }
+    },
+    {
+      id: 2,
+      title: 'Traject 2',
+      content: 'Some content',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+      button: {
+        to: '/contact',
+        text: 'Neem contact op',
+        type: 'primary',
+        target: 'internal'
+      }
+    },
+    {
+      id: 3,
+      title: 'Traject 3',
+      content: 'Some content',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+      button: {
+        to: '/contact',
+        text: 'Neem contact op',
+        type: 'primary',
+        target: 'internal'
+      }
+    },
+  ]
+
+  page.header.title = 'Ons aanbod voor teams'
+  page.header.buttons = []
+
   return (
     <div>
       <NavBarBg />
-      <main className="page-method">
-        <Hero header={page.header} />
+      <Hero header={page.header} />
+      <main className="page-product">
         <div className="container">
-          <h1>Wat is het</h1>
-          <p>
-            Sportpsychologie voor (sport) teams is vaak gericht op het
-            verbeteren van het welzijn, procesverbetering en resultaat; de
-            ontwikkeling van het team, het verbeteren van de samenwerking en
-            communicatie, het vergroten van de mentale weerbaarheid en het
-            verbeteren van de teamprestaties om op deze manier het beste uit
-            alle teamleden en elkaar te kunnen halen.
-          </p>
-          <h2>Voorbeelden</h2>
-          <ul>
-            <li>Meer dan 1 team willen worden</li>
-            <li>Meer dan 1 team willen worden</li>
-            <li>Als team kunnen samenwerken</li>
-            <li>Inzicht krijgen in teamkwaliteiten en aandachtspunten</li>
-          </ul>
-          <div className="accordion">
+          <section className="section">
+            <div className="columns columns--2-col">
+              <div>
+                <h1>Wat is het</h1>
+                <p>
+                  Sportpsychologie voor (sport) teams is vaak gericht op het
+                  verbeteren van het welzijn, procesverbetering en resultaat; de
+                  ontwikkeling van het team, het verbeteren van de samenwerking
+                  en communicatie, het vergroten van de mentale weerbaarheid en
+                  het verbeteren van de teamprestaties om op deze manier het
+                  beste uit alle teamleden en elkaar te kunnen halen.
+                </p>
+                <h2>Voorbeelden</h2>
+                <ul>
+                  <li>Meer dan 1 team willen worden</li>
+                  <li>Meer dan 1 team willen worden</li>
+                  <li>Als team kunnen samenwerken</li>
+                  <li>Inzicht krijgen in teamkwaliteiten en aandachtspunten</li>
+                </ul>
+              </div>
+              <div>
+                <img
+                  alt="image"
+                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                />
+              </div>
+            </div>
+          </section>
+
+          <section className="section">
             <Accordion
-              accordion={{ title: "Voor wie is het?", content: "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club." }}
+              accordion={{
+                title: "Voor wie is het?",
+                content:
+                  "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club.",
+              }}
             />
-          </div>
-          <div>
-            <h3>Trajecten op maat:</h3>
+            <Accordion
+              accordion={{
+                title: "Wat zijn de mogelijkheden?",
+                content:
+                  "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club.",
+              }}
+            />
+          </section>
+          <section className="section">
             <div>
-              <span>Card 1</span>
+              <h3>Traject op maat?</h3>
+              <p>
+                Neem contact op dan kijken we samen naar de wensen en exacte
+                invulling hiervan en wordt er een offerte opgesteld.
+              </p>
             </div>
-            <div>
-              <span>Card 2</span>
-            </div>
-            <div>
-              <span>Card 3</span>
-            </div>
-          </div>
+            <Approaches approaches={offers} />
+          </section>
         </div>
       </main>
     </div>

@@ -1,8 +1,12 @@
 .accordion {
+  margin-bottom: 24px;
+
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
+
     &:hover {
       cursor: pointer;
     }
@@ -11,6 +15,10 @@
         transform: rotate(180deg);
       }
     }
+  }
+
+  &__title {
+    margin-bottom: 0;
   }
 
   &__icon {
@@ -22,5 +30,7 @@
     height: 0;
     overflow: hidden;
     transition: all 0.35s ease;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba($c1, 0.25);
   }
 }
