@@ -56,8 +56,8 @@ const Events = ({ events }) => {
   });
 
   return (
-    <section className="events">
-      <div className="container container--96">
+    <section className="events section">
+      <div className="container">
         <div className="events__intro">
           <h1>Agenda</h1>
           <p>Staat jou workshop er niet tussen? Neem dan contact met ons op</p>
@@ -74,11 +74,17 @@ const Events = ({ events }) => {
               <option value="blog">Blog</option>
             </select>
           </div>
-          <div className="events__overview__events">
-            {perMonth.map((eventsThisMonth, key) => {
-              return <EventsPerMonth key={key} events={eventsThisMonth} />;
+            {perMonth.length === 0 ? (
+              <div className="events__overview__no-results">
+                <span>Sorry, we hebben niks voor je kunnen vinden</span>
+              </div>
+            ) : (
+            <div className="events__overview__events">
+              {perMonth.map((eventsThisMonth, key) => {
+                return <EventsPerMonth key={key} events={eventsThisMonth} />;
             })}
-          </div>
+            </div>
+            )}
         </div>
       </div>
     </section>

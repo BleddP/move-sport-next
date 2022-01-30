@@ -1,13 +1,15 @@
 .services {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
-  @include breakpoint(lg) {
+  gap: 24px;
+  @include breakpoint(md) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+
+  @include breakpoint(lg) {
+    gap: 24px;
+  }
 
     .card {
-      max-width: 80%;
       justify-self: center;
     }
   }

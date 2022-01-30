@@ -30,6 +30,17 @@
       }
     }
 
+    &__no-results {
+      display: flex;
+      justify-content: center;
+      padding: 24px 0;
+      font-weight: 600;
+      font-style: italic;
+      span {
+        margin-bottom: 0;
+      }
+    }
+
     &__events {
       .events-per-month {
         margin: 48px 0;

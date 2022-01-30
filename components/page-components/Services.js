@@ -4,7 +4,7 @@ import Card from "@components/ui-components/Card";
 const Services = ({services}) => {
  
   return (
-    <section className="container container--96">
+    <section className="container section">
       <div className="services">
         {services.map((service) => {
           service.attributes.button = {

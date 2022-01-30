@@ -2,7 +2,7 @@ import Slider from '@ui/slider/Slider'
 
 const Clients = ({clients}) => {
   return (
-    <section className="container container--96">
+    <section className="container section">
       <div className="clients">
         <div className='clients__content'>
           <h2>{clients.title}</h2>

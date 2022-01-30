@@ -10,7 +10,7 @@
 
     &__image {
         width: 100%;
-        height: 200px;
+        height: auto;
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -19,9 +19,12 @@
 
     &__content {
         width: 100%;
-        margin: 12px;
+        height: auto;
+        padding: 12px;
+        max-width: 90%;
         @include breakpoint(md) {
-            margin: 24px;
+            padding: 24px;
+            max-width: 85%;
         }
     }
 
