@@ -16,13 +16,13 @@ const FooterStrip = () => {
         <a>Move Sport Psychologie &copy; {new Date().getFullYear()}</a>
       </Link>
       <div className="footer__strip__socials">
-        <a href="https://www.instagram.com/movesportpsychologie/" target="_blank">
+        <a href="https://www.instagram.com/movesportpsychologie/" target="_blank" rel="noreferrer">
           <Image src={iconIG} />
         </a>
-        <a href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142" target="_blank">
+        <a href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142" target="_blank" rel="noreferrer"> 
           <Image src={iconFB} />
         </a>
-        <a href="https://www.linkedin.com/company/move-sportpsychologie/" target="_blank">
+        <a href="https://www.linkedin.com/company/move-sportpsychologie/" target="_blank" rel="noreferrer">
           <Image src={iconLI} />
         </a>
       </div>
