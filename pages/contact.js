@@ -36,13 +36,13 @@ const ContactPage = ({ page }) => {
                 </a>
               </div>
               <div className="contact-page__socials">
-                <a href="#" target="_blank" referrerPolicy="noopener">
+                <a href="https://www.instagram.com/movesportpsychologie/" target="_blank" referrerPolicy="noopener">
                   <Image src={Instagram} width={20} height={20} />
                 </a>
-                <a href="#" target="_blank" referrerPolicy="noopener">
+                <a href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142" target="_blank" referrerPolicy="noopener">
                   <Image src={Facebook} width={20} height={20} />
                 </a>
-                <a href="#" target="_blank" referrerPolicy="noopener">
+                <a href="https://www.linkedin.com/company/move-sportpsychologie/" target="_blank" referrerPolicy="noopener">
                   <Image src={LinkedIn} width={20} height={20} />
                 </a>
               </div>

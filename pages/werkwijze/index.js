@@ -5,14 +5,23 @@ import MethodsServices from "@components/page-components/MethodsServices";
 import TextBlock from "@ui/TextBlock";
 import Footer from "@ui/layout/Footer";
 
+// Animated wrapper
+import FadeIn from "@components/animated-components/FadeIn";
+
 const Methods = ({ page }) => {
   return (
     <div>
       <NavBarBg />
       <OurMethods page={page} />
-      <MethodsServices services={page.services.services.data} />
-      <TextBlock data={page.location} />
-      <TextBlock data={page.expenses} />
+      <FadeIn>
+        <MethodsServices services={page.services.services.data} />
+      </FadeIn>
+      <FadeIn>
+        <TextBlock data={page.location} />
+      </FadeIn>
+      <FadeIn>
+        <TextBlock data={page.expenses} />
+      </FadeIn>
       <Footer />
     </div>
   );

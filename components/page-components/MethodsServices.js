@@ -1,6 +1,3 @@
-// Next
-import Image from 'next/image'
-
 // Components
 import Button from '@ui/Button'
 import renderImage from '../helper-functions/renderImage'
@@ -14,7 +11,7 @@ const MethodsServices = ({services}) => {
           return (
             <div className="service" key={service.id}>
               <div className="service__image">
-                <Image src={image.url} alt={service.attributes.title} width={500} height={400} />
+                <img src={image.url} alt={service.attributes.title} width={500} height={400} />
               </div>
               <div className="service__content">
                   <h4>{service.attributes.title}</h4>

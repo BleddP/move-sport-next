@@ -131,21 +131,21 @@ const Navbar = () => {
             </nav>
             <div className="header__navigation__socials">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/movesportpsychologie/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <Image src={iconIG} />
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142"
                 target="_blank"
                 rel="noreferrer"
               >
                 <Image src={iconFB} />
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/move-sportpsychologie/"
                 target="_blank"
                 rel="noreferrer"
               >

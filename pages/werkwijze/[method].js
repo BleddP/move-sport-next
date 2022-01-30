@@ -7,6 +7,9 @@ import Hero from "@components/ui-components/Hero";
 import Accordion from "@components/ui-components/Accordion";
 import Approaches from "@components/page-components/Approaches";
 
+// Animated wrapper
+import FadeIn from "@components/animated-components/FadeIn";
+
 const Method = ({ page }) => {
 
   const offers = [
@@ -57,6 +60,7 @@ const Method = ({ page }) => {
       <Hero header={page.header} />
       <main className="page-product">
         <div className="container">
+          <FadeIn>
           <section className="section">
             <div className="columns columns--2-col">
               <div>
@@ -85,32 +89,41 @@ const Method = ({ page }) => {
               </div>
             </div>
           </section>
+          </FadeIn>
 
           <section className="section">
-            <Accordion
-              accordion={{
-                title: "Voor wie is het?",
-                content:
-                  "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club.",
-              }}
-            />
-            <Accordion
-              accordion={{
-                title: "Wat zijn de mogelijkheden?",
-                content:
-                  "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club.",
-              }}
-            />
+            <FadeIn>
+              <Accordion
+                accordion={{
+                  title: "Voor wie is het?",
+                  content:
+                    "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club.",
+                }}
+              />
+            </FadeIn>
+            <FadeIn>
+              <Accordion
+                accordion={{
+                  title: "Wat zijn de mogelijkheden?",
+                  content:
+                    "Voor teams in organisatie zoals het bedrijfsleven, management, een vereniging, het leger, performance teams en sportteams of besturen binnen een vereniging of club.",
+                }}
+              />
+            </FadeIn>
           </section>
           <section className="section">
-            <div>
-              <h3>Traject op maat?</h3>
-              <p>
-                Neem contact op dan kijken we samen naar de wensen en exacte
-                invulling hiervan en wordt er een offerte opgesteld.
-              </p>
-            </div>
-            <Approaches approaches={offers} />
+            <FadeIn>
+              <div>
+                <h3>Traject op maat?</h3>
+                <p>
+                  Neem contact op dan kijken we samen naar de wensen en exacte
+                  invulling hiervan en wordt er een offerte opgesteld.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <Approaches approaches={offers} />
+            </FadeIn>
           </section>
         </div>
       </main>

@@ -5,6 +5,7 @@ import MentalTraining from "@components/page-components/MentalTraining";
 import Services from "@components/page-components/Services";
 import Clients from "@components/page-components/Clients";
 import PartnerStrip from "@components/ui-components/PartnerStrip";
+import Footer from '@components/ui-components/layout/Footer'
 
 // Animated wrapper
 import FadeIn from "@components/animated-components/FadeIn";
@@ -30,6 +31,7 @@ const Home = ({page}) => {
       <FadeIn>
         <PartnerStrip partners={page.partners[0]} />
       </FadeIn>
+      <Footer />
     </main>
   );
 };

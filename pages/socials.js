@@ -5,14 +5,23 @@ import Clients from '@components/page-components/Clients'
 import PartnerStrip from '@ui/PartnerStrip'
 import Footer from '@ui/layout/Footer'
 
+// Animated wrapper
+import FadeIn from "@components/animated-components/FadeIn";
+
 const Socials = ({page}) => {
     return (
         <main>
             <NavBarBg />
             <Services services={page.services.services.data} />
-            <Events events={page.events.socials.data} />
-            <Clients clients={page.clients} />
-            <PartnerStrip partners={page.partners} />
+            <FadeIn>
+              <Events events={page.events.socials.data} />
+            </FadeIn>
+            <FadeIn>
+              <Clients clients={page.clients} />
+            </FadeIn>
+            <FadeIn>
+              <PartnerStrip partners={page.partners} />
+            </FadeIn>
             <Footer/>
         </main>
     )

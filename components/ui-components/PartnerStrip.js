@@ -4,7 +4,7 @@ const PartnerStrip = ({ partners }) => {
   const development = process.env.NODE_ENV === 'development'
 
   return (
-    <section className="partners-strip section">
+    <section className="partners-strip">
       {array.map((partner) => {
         let logo = partner.attributes.logo.data.attributes.url
         if (development) {
