@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 // Libs
 import renderImage from '../helper-functions/renderImage'
 
@@ -18,7 +16,7 @@ const About = ({data}) => {
             </p>
           </div>
           <div className="about__content image">
-          <img src={image.url} alt={data.title} width={600} height={600} />
+          <img src={image.url} alt={data.title} />
           </div>
         </div>
       </div>
