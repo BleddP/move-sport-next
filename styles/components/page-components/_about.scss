@@ -28,8 +28,8 @@
       overflow: hidden;
       z-index: -1;
       @include breakpoint(lg) {
-        min-height: 600px;
-        width: 600px;
+        min-height: 500;
+        width: 500;
         transform: translate(96px, -48px);
       }
       img {
