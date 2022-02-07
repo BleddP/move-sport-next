@@ -1,9 +1,12 @@
 import Image from "next/image";
 
-// Content
-import Portrait from "@assets/content/chloe.jpeg";
+// Libs
+import renderImage from '../helper-functions/renderImage'
 
 const About = ({data}) => {
+
+  const image = renderImage(data.image.data.attributes)
+
   return (
     <section className="about">
       <div className="container">
@@ -15,7 +18,7 @@ const About = ({data}) => {
             </p>
           </div>
           <div className="about__content image">
-            <Image src={Portrait} />
+          <Image src={image.url} alt={data.title} layout="intrinsic" priority={true} />
           </div>
         </div>
       </div>

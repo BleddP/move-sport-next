@@ -4,6 +4,7 @@ import About from "../components/page-components/About";
 import Footer from '../components/ui-components/layout/Footer'
 
 const AboutMe = ({ page }) => {
+  
   return (
     <main className="page-about">
       <NavBarBg />
