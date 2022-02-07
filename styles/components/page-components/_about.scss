@@ -25,13 +25,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 300px;
+      min-height: 300px;
       width: 300px;
       border-radius: 50%;
       overflow: hidden;
       z-index: -1;
       @include breakpoint(lg) {
-        height: 600px;
+        min-height: 600px;
         width: 600px;
         transform: translate(96px, -48px);
       }

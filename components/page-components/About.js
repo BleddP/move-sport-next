@@ -18,7 +18,7 @@ const About = ({data}) => {
             </p>
           </div>
           <div className="about__content image">
-          <Image src={image.url} alt={data.title} layout="intrinsic" width={600} height={600} priority={true} />
+          <img src={image.url} alt={data.title} width={600} height={600} />
           </div>
         </div>
       </div>
