@@ -24,8 +24,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 300px;
-      width: 300px;
       border-radius: 50%;
       overflow: hidden;
       z-index: -1;
@@ -35,8 +33,12 @@
         transform: translate(96px, -48px);
       }
       img {
-        width: 100%;
-        height: auto;
+        width: 300px;
+        height: 300px;
+        @include breakpoint(lg) {
+          width: 500px;
+          height: 500px;
+        }
       }
     }
   }
