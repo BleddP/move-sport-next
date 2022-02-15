@@ -2,6 +2,7 @@
 import NavBarBg from "@ui/layout/NavBarBg";
 import OurMethods from "@components/page-components/OurMethods";
 import MethodsServices from "@components/page-components/MethodsServices";
+import Services from "@components/page-components/Services";
 import TextBlock from "@ui/TextBlock";
 import Footer from "@ui/layout/Footer";
 
@@ -14,7 +15,7 @@ const Methods = ({ page }) => {
       <NavBarBg />
       <OurMethods page={page} />
       <FadeIn>
-        <MethodsServices services={page.services.services.data} />
+        <Services services={page.services.services.data} />
       </FadeIn>
       <FadeIn>
         <TextBlock data={page.location} />
