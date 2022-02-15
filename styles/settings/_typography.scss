@@ -62,6 +62,7 @@ span {
   line-height: 1.4em;
   margin: 0;
   margin-bottom: 12px;
+  white-space: pre-line;
 
   @include breakpoint(md) {
     font-size: 18px;
