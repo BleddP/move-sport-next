@@ -7,7 +7,7 @@ const About = ({data}) => {
 
   return (
     <section className="about">
-      <div className="container container--96">
+      <div className="container container--48">
         <div className="about__content">
           <div className='about__content copy'>
             <h2>{data.title}</h2>

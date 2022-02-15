@@ -11,6 +11,7 @@
 
     &.homepage {
         height: 80vh;
+        background-position: top;
     }
 
     .container {
@@ -24,7 +25,7 @@
         justify-content: center;
         color: whitesmoke;
         @include breakpoint(lg) {
-            max-width: 40%;
+            max-width: 60%;
         }
 
         h1 {

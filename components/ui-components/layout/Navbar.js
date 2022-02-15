@@ -104,7 +104,7 @@ const Navbar = () => {
         <div className="header__container">
           <Link href="/">
             <div className="header__logo">
-              <Image src={Logo} height={50} />
+              <Image src={Logo} height={100} />
             </div>
           </Link>
           <div className="header__navigation">
