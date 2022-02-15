@@ -5,7 +5,15 @@ import Pulse from "@assets/icons/pulse.svg";
 import Sparkles from "@assets/icons/sparkles.svg";
 import Complete from "@assets/icons/complete.svg";
 
+// Helper functions
+import renderImage from "@components/helper-functions/renderImage";
+
 const MentalTraining = ({data}) => {
+
+  const image_1 = renderImage(data.image_1.data.attributes)
+  const image_2 = renderImage(data.image_2.data.attributes)
+  const image_3 = renderImage(data.image_3.data.attributes)
+
   return (
     <section className="mental-training">
       <div className="container container--96">
@@ -13,19 +21,19 @@ const MentalTraining = ({data}) => {
           <h2>{data.title}</h2>
           <div className="mental-training__usps">
             <div className="usp">
-              <Image width={96} height={96} src={Sparkles} />
+              <Image width={96} height={96} src={image_1.url} />
               <p>
                 {data.intro_1}
               </p>
             </div>
             <div className="usp">
-              <Image width={96} height={96} src={Complete} />
+              <Image width={96} height={96} src={image_2.url} />
               <p>
                 {data.intro_2}
               </p>
             </div>
             <div className="usp">
-              <Image width={96} height={96} src={Pulse} />
+              <Image width={96} height={96} src={image_3.url} />
               <p>
                 {data.intro_3}
               </p>
