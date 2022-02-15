@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0px;
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
