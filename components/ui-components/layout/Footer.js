@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__grid__navigation">
-            <h4>Move Sport Psychologie</h4>
+            <h4>MOVE Sport Psychologie</h4>
             <Link href="/">Home</Link>
             <Link href="/werkwijze/">Werkwijze</Link>
             <Link href="/socials/">Socials</Link>
@@ -22,10 +22,9 @@ const Footer = () => {
           </div>
           <div className="footer__grid__callback">
             <div>
-              <span>Bel me terug</span>
+              <span>Bel mij terug</span>
               <p>
-                Laat hieronder je telefoon nummer achter en ik bel je graag
-                terug voor een kennismaking
+                Laat hier je telefoonnummer achter en ik bel je terug. 
               </p>
               <form>
                   <input type='text' placeholder="Bel me terug" />
