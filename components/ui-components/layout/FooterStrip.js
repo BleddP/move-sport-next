@@ -13,7 +13,7 @@ const FooterStrip = () => {
         <a>Algemene Voorwaarden</a>
       </Link>
       <Link href="/">
-        <a>Move Sport Psychologie &copy; {new Date().getFullYear()}</a>
+        <a>MOVE Sport Psychologie &copy; {new Date().getFullYear()}</a>
       </Link>
       <div className="footer__strip__socials">
         <a href="https://www.instagram.com/movesportpsychologie/" target="_blank" rel="noreferrer">
