@@ -26,6 +26,9 @@ const Hero = (props: any) => {
       <div className="container">
         <div className="hero__content">
           <h1>{header.title}</h1>
+          {header.subtitle &&
+            <h4>{header.subtitle}</h4>
+          }
           {type === "homepage" && (
             <div className="vspn-certified">
               <Image src={VSPN} />

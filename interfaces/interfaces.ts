@@ -1,5 +1,6 @@
 export interface Header {
     title: string,
+    subtitle?: string,
     buttons: Array<Button>
 }
 
