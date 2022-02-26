@@ -13,6 +13,7 @@ const Footer = () => {
           <div className="footer__grid__navigation">
             <h4>MOVE Sport Psychologie</h4>
             <Link href="/">Home</Link>
+            <Link href="/about">Over MOVE</Link>
             <Link href="/werkwijze/">Werkwijze</Link>
             <Link href="/socials/">Socials</Link>
             <Link href="/contact/">Contact</Link>
@@ -27,7 +28,7 @@ const Footer = () => {
                 Laat hier je telefoonnummer achter en ik bel je terug. 
               </p>
               <form>
-                  <input type='text' placeholder="Bel me terug" />
+                  <input type='text' placeholder="Bel mij terug" />
                   <button type='submit'>Verzenden</button>
               </form>
             </div>
