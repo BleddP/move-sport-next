@@ -44,7 +44,7 @@ const Navbar = () => {
   const menu = [
     {
       id: 1,
-      menu: "Over mij",
+      menu: "Over MOVE",
       to: "/about",
     },
     {
