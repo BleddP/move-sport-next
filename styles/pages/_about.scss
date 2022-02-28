@@ -5,4 +5,19 @@
         align-items: center;
         justify-content: center;
     }
+
+    .dynamic-image {
+        max-width: 100%;
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    .text-block {
+        text-align: left;
+        h2 {
+            margin-bottom: 12px !important;
+        }
+    }
 }
