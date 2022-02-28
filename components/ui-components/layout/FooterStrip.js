@@ -9,20 +9,38 @@ import iconLI from "@assets/icons/linkedin.svg";
 const FooterStrip = () => {
   return (
     <footer className="footer__strip">
-      <Link href="/">
-        <a>Algemene Voorwaarden</a>
-      </Link>
+      <div>
+        <Link href="/">
+          <a>Algemene Voorwaarden</a>
+        </Link>
+        {' '}
+        <Link href="/">
+          <a>Privacy Verklaring</a>
+        </Link>
+      </div>
       <Link href="/">
         <a>MOVE Sport Psychologie &copy; {new Date().getFullYear()}</a>
       </Link>
       <div className="footer__strip__socials">
-        <a href="https://www.instagram.com/movesportpsychologie/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.instagram.com/movesportpsychologie/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Image src={iconIG} />
         </a>
-        <a href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142" target="_blank" rel="noreferrer"> 
+        <a
+          href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Image src={iconFB} />
         </a>
-        <a href="https://www.linkedin.com/company/move-sportpsychologie/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/company/move-sportpsychologie/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Image src={iconLI} />
         </a>
       </div>
