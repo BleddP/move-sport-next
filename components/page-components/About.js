@@ -14,6 +14,8 @@ const About = ({ data }) => {
       <div className="container container--48">
         <div className="about__content">
           <div className="about__content copy">
+            {data.title && <h2>{data.title}</h2>}
+            {data.intro && <p>{data.intro}</p>}
             {data.dynamic_content &&
               data.dynamic_content.map((item, i) => {
                 const img = "ui-components.image";
