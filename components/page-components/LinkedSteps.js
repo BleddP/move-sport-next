@@ -1,10 +1,25 @@
 // React / Next
 import { useState } from "react";
 
+// Animation
+import { useSpring, animated } from "react-spring";
+
 const LinkedSteps = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
   const baseUrl =
     process.env.NODE_ENV === "production" ? "" : "http://localhost:1337";
+
+  // Animation
+  const transition = useSpring({
+    from: {
+      opacity: 0,
+      y: 48,
+    },
+    to: {
+      opacity: 1,
+      y: 0,
+    },
+  });
 
   return (
     <div className="linked-steps">
@@ -22,19 +37,21 @@ const LinkedSteps = ({ steps }) => {
           );
         })}
       </div>
-      <div className="active-step">
-        <div className="active-step__icon">
-          <img
-            src={
-              baseUrl + steps[activeStep].attributes.icon.data.attributes.url
-            }
-            alt={steps[activeStep].attributes.title}
-          />
-        </div>
-        <div className="active-step__content">
-          <h4>{steps[activeStep].attributes.title}</h4>
-          <p>{steps[activeStep].attributes.content}</p>
-        </div>
+      <div key={activeStep}>
+        <animated.div style={transition} className="active-step">
+          <div className="active-step__icon">
+            <img
+              src={
+                baseUrl + steps[activeStep].attributes.icon.data.attributes.url
+              }
+              alt={steps[activeStep].attributes.title}
+            />
+          </div>
+          <div className="active-step__content">
+            <h4>{steps[activeStep].attributes.title}</h4>
+            <p>{steps[activeStep].attributes.content}</p>
+          </div>
+        </animated.div>
       </div>
     </div>
   );
