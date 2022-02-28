@@ -14,8 +14,8 @@ const Footer = () => {
             <h4>MOVE Sport Psychologie</h4>
             <Link href="/">Home</Link>
             <Link href="/about">Over MOVE</Link>
-            <Link href="/werkwijze/">Werkwijze</Link>
-            <Link href="/socials/">Socials</Link>
+            <Link href="/aanbod/">Aanbod</Link>
+            <Link href="/events/">Events</Link>
             <Link href="/contact/">Contact</Link>
           </div>
           <div className="footer__grid__logo">

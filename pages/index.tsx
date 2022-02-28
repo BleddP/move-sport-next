@@ -28,9 +28,7 @@ const Home = ({page}) => {
       <FadeIn>
         <Clients clients={page.clients} />
       </FadeIn>
-      <FadeIn>
-        <PartnerStrip partners={page.partners[0]} />
-      </FadeIn>
+      <PartnerStrip partners={page.partners[0]} />
       <Footer />
     </main>
   );

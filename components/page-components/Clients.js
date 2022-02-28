@@ -1,4 +1,5 @@
 import Slider from '@ui/slider/Slider'
+import Button from '@ui/Button'
 
 const Clients = ({clients}) => {
   return (
@@ -9,6 +10,7 @@ const Clients = ({clients}) => {
           <p>
             {clients.intro}
           </p>
+          {clients.button && <Button text={clients.button.text} to={clients.button.url} type={clients.button.type} target={clients.button.target} />}
         </div>
         <div className='clients__reviews'>
             <Slider slides={clients.clients.data} />

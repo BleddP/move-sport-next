@@ -1,9 +1,9 @@
 // Components
 import NavBarBg from "@ui/layout/NavBarBg";
 import OurMethods from "@components/page-components/OurMethods";
-import MethodsServices from "@components/page-components/MethodsServices";
+import PartnerStrip from "@components/ui-components/PartnerStrip";
 import Services from "@components/page-components/Services";
-import TextBlock from "@ui/TextBlock";
+import Accordion from '@components/ui-components/Accordion'
 import Footer from "@ui/layout/Footer";
 
 // Animated wrapper
@@ -17,12 +17,19 @@ const Methods = ({ page }) => {
       <FadeIn>
         <Services services={page.services.services.data} />
       </FadeIn>
-      <FadeIn>
-        <TextBlock data={page.location} />
-      </FadeIn>
-      <FadeIn>
-        <TextBlock data={page.expenses} />
-      </FadeIn>
+      {page.accordions && 
+      page.accordions.map((accordion, i) => {
+        return (
+          <FadeIn key={i}>
+            <div className="container">
+            <Accordion accordion={accordion} />
+            </div>
+          </FadeIn>
+        )
+      })
+      }
+      {page.partners && 
+      <PartnerStrip partners={page.partners} />}
       <Footer />
     </div>
   );

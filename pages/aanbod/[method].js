@@ -6,6 +6,8 @@ import NavBarBg from "@components/ui-components/layout/NavBarBg";
 import Hero from "@components/ui-components/Hero";
 import Accordion from "@components/ui-components/Accordion";
 import Approaches from "@components/page-components/Approaches";
+import PartnerStrip from "@components/ui-components/PartnerStrip";
+import Footer from '@components/ui-components/layout/Footer'
 
 // Animated wrapper
 import FadeIn from "@components/animated-components/FadeIn";
@@ -127,6 +129,8 @@ const Method = ({ page }) => {
           </section>
         </div>
       </main>
+      <PartnerStrip partners={page.partners} />
+      <Footer />
     </div>
   );
 };

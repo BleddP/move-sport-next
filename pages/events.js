@@ -8,7 +8,7 @@ import Footer from '@ui/layout/Footer'
 // Animated wrapper
 import FadeIn from "@components/animated-components/FadeIn";
 
-const Socials = ({page}) => {
+const EventsPage = ({page}) => {
     return (
         <main>
             <NavBarBg />
@@ -19,9 +19,7 @@ const Socials = ({page}) => {
             <FadeIn>
               <Clients clients={page.clients} />
             </FadeIn>
-            <FadeIn>
-              <PartnerStrip partners={page.partners} />
-            </FadeIn>
+            <PartnerStrip partners={page.partners} />
             <Footer/>
         </main>
     )
@@ -46,4 +44,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default Socials
+export default EventsPage

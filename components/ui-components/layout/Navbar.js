@@ -49,30 +49,30 @@ const Navbar = () => {
     },
     {
       id: 2,
-      menu: "Werkwijze",
-      to: "/werkwijze",
+      menu: "Aanbod",
+      to: "/aanbod",
       children: [
         {
           id: 1,
           menu: "Individueel",
-          to: "/werkwijze/individueel",
+          to: "/aanbod/individueel",
         },
         {
           id: 2,
           menu: "Teams",
-          to: "/werkwijze/teams",
+          to: "/aanbod/teams",
         },
         {
           id: 3,
           menu: "Zakelijk",
-          to: "/werkwijze/zakelijk",
+          to: "/aanbod/zakelijk",
         },
       ],
     },
     {
       id: 3,
-      menu: "Socials",
-      to: "/socials",
+      menu: "Events",
+      to: "/events",
     },
     {
       id: 4,

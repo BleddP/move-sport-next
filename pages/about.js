@@ -1,16 +1,17 @@
 // Components
 import NavBarBg from "@ui/layout/NavBarBg";
 import About from "../components/page-components/About";
-import Footer from '../components/ui-components/layout/Footer'
+import Footer from "../components/ui-components/layout/Footer";
+import PartnerStrip from "../components/ui-components/PartnerStrip";
 
 const AboutMe = ({ page }) => {
-  
   return (
     <main className="page-about">
       <NavBarBg />
       <div className="page-about__content">
         <About data={page} />
       </div>
+      {page.partners && <PartnerStrip partners={page.partners} />}
       <Footer />
     </main>
   );

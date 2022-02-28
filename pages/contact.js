@@ -4,6 +4,7 @@ import Image from "next/image";
 // Components
 import NavBarBg from "@ui/layout/NavBarBg";
 import ContactForm from "@components/page-components/ContactForm";
+import PartnerStrip from "@components/ui-components/PartnerStrip";
 
 // Icons
 import Instagram from "@assets/icons/instagram.svg";
@@ -36,13 +37,28 @@ const ContactPage = ({ page }) => {
                 </a>
               </div>
               <div className="contact-page__socials">
-                <a href="https://www.instagram.com/movesportpsychologie/" target="_blank" rel="noreferrer" referrerPolicy="noopener">
+                <a
+                  href="https://www.instagram.com/movesportpsychologie/"
+                  target="_blank"
+                  rel="noreferrer"
+                  referrerPolicy="noopener"
+                >
                   <Image src={Instagram} width={20} height={20} />
                 </a>
-                <a href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142" target="_blank" rel="noreferrer" referrerPolicy="noopener">
+                <a
+                  href="https://www.facebook.com/MOVE-sportpsychologie-101891458138142"
+                  target="_blank"
+                  rel="noreferrer"
+                  referrerPolicy="noopener"
+                >
                   <Image src={Facebook} width={20} height={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/move-sportpsychologie/" target="_blank" rel="noreferrer" referrerPolicy="noopener">
+                <a
+                  href="https://www.linkedin.com/company/move-sportpsychologie/"
+                  target="_blank"
+                  rel="noreferrer"
+                  referrerPolicy="noopener"
+                >
                   <Image src={LinkedIn} width={20} height={20} />
                 </a>
               </div>
@@ -53,6 +69,7 @@ const ContactPage = ({ page }) => {
           </div>
         </div>
       </section>
+      {page.partners && <PartnerStrip partners={page.partners} />}
     </main>
   );
 };
