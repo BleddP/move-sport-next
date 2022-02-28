@@ -1,0 +1,122 @@
+.linked-steps {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 48px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+
+    .step {
+      max-width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &.last {
+          .step__index {
+              &::after {
+                  width: 0px;
+              }
+          }
+      }
+
+      &__index {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid $c1;
+        border-radius: 50%;
+        color: $c1;
+        font-family: "FreightSans Pro", "Arial", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        transition: all 0.35s ease;
+
+        @include breakpoint(md) {
+          &::after {
+            flex-basis: 100%;
+            flex-grow: 1;
+            position: absolute;
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            width: 100px;
+            background-color: $c1;
+            left: 50px;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: $c1;
+          color: white;
+        }
+      }
+
+      &__content {
+        opacity: 0;
+      }
+
+      &__title {
+        font-family: "FreightSans Pro", "Arial", sans-serif;
+        font-weight: 600;
+      }
+
+      &.active {
+        .step {
+          &__index {
+            background-color: $c1;
+            color: white;
+          }
+
+          &__content {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .active-step {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include breakpoint(md) {
+      grid-template-columns: 200px 1fr;
+    }
+
+    &__icon {
+      max-width: 100%;
+      display: flex;
+
+      @include breakpoint(md) {
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        max-width: 50px;
+        @include breakpoint(md) {
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}
