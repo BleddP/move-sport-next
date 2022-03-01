@@ -19,7 +19,7 @@ const FooterStrip = () => {
         </Link>
       </div>
       <Link href="/">
-        <a>MOVE Sport Psychologie &copy; {new Date().getFullYear()}</a>
+        <a>MOVE sport psychologie &copy; {new Date().getFullYear()}</a>
       </Link>
       <div className="footer__strip__socials">
         <a
