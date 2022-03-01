@@ -27,11 +27,11 @@ const ContactPage = ({ page }) => {
               <h1>{page.content.title}</h1>
               <p>{page.content.content}</p>
               <div className="contact-page__contact">
-                <a href="tel:0637347970" target="_blank" referrerPolicy="noopener">
+                <a href="tel:0637347970" target="_blank" rel="noreferrer" referrerPolicy="noopener">
                   <Image src={Phone} width={24} height={24} />
                   <span>{phone}</span>
                 </a>
-                <a href="mailto:info@movesportpsychologie.nl" target="_blank" referrerPolicy="noopener">
+                <a href="mailto:info@movesportpsychologie.nl" target="_blank" rel="noreferrer" referrerPolicy="noopener">
                   <Image src={Email} width={24} height={24} />
                   <span>{email}</span>
                 </a>
