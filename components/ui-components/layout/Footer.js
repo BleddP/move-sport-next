@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__grid__navigation">
-            <h4>MOVE sport psychologie</h4>
+            <h4>MOVE sportpsychologie</h4>
             <Link href="/">Home</Link>
             <Link href="/about">Over MOVE</Link>
             <Link href="/aanbod/">Aanbod</Link>
