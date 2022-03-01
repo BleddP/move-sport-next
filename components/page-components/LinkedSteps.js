@@ -1,5 +1,5 @@
 // React / Next
-import { useState } from "react";
+import { useState, Fragment } from "react";
 
 // Animation
 import { useSpring, animated } from "react-spring";
@@ -71,11 +71,14 @@ const Step = ({ step, index, activeStep, setActiveStep, length }) => {
   if (active) classes.push("active");
 
   return (
+    <Fragment>
     <div className={classes.join(" ")}>
       <span className="step__index" onClick={() => setActiveStep(index)}>
         {index + 1}
       </span>
       <span className="step__title">{title}</span>
     </div>
+    <div className={last ? 'link last' : 'link'}></div>
+    </Fragment>
   );
 };
