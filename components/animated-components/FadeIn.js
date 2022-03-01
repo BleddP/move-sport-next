@@ -9,7 +9,7 @@ const FadeIn = ({ children }) => {
   const [inView, setInview] = useState(false);
 
   const transition = useSpring({
-    delay: 500,
+    delay: 200,
     to: {
       y: !inView ? 24 : 0,
       opacity: !inView ? 0 : 1,
