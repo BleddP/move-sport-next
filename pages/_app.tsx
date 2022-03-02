@@ -1,5 +1,5 @@
 import "../styles/globals.scss";
-import { Fragment } from "react";
+import { useEffect, Fragment } from "react";
 
 // Typescript
 import type { AppProps } from 'next/app'
@@ -8,7 +8,16 @@ import type { AppProps } from 'next/app'
 import Navbar from "@ui/layout/Navbar";
 import FooterStrip from '@ui/layout/FooterStrip'
 
+import {getLCP, getFID, getCLS} from 'web-vitals';
+
 function MyApp({ Component, pageProps }: AppProps) {
+
+  useEffect(() => {
+    getCLS(console.log);
+    getFID(console.log);
+    getLCP(console.log);  
+  }, [])
+
   return (
     <Fragment>
       <Navbar />
