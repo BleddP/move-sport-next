@@ -12,8 +12,10 @@ export interface Button {
 
 export interface CardInterface {
     title: string,
-    content: string,
+    content?: string,
+    intro?: string,
     id: number,
-    button: Button,
+    button?: Button,
+    buttons?: Button[],
     image: any
 }

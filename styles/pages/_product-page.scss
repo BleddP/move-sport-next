@@ -1,3 +1,11 @@
 .page-product {
     padding: 48px 0;
+
+    &__intro {
+        img {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+        }
+    }
 }

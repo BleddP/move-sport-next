@@ -29,7 +29,7 @@ const Accordion = ({accordion}) => {
     return (
         <div className="accordion">
             <div className={open ? 'accordion__header open' : 'accordion__header'} onClick={toggleAccordion}>
-                <h3 className="accordion__title">{title}</h3>
+                <h4 className="accordion__title">{title}</h4>
                 <div className="accordion__icon">
                     <Image src={Chevron} alt="chevron" width={25} height={25} />
                 </div>

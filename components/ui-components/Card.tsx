@@ -12,7 +12,7 @@ import renderImage from '../helper-functions/renderImage'
 const Card = (props: any) => {
   const card: CardInterface = props.card;
   let image = {
-    url: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
+    url: ''
   }
   if (card.image.data) {
     image = renderImage(card?.image?.data?.attributes)
@@ -27,13 +27,27 @@ const Card = (props: any) => {
       )}
       <div className="card__content">
         <h4 className="gradient-header">{card.title}</h4>
-        <p>{card.content}</p>
+        <p>{card.content || card.intro}</p>
+        {card.button &&
         <Button
           to={card.button.to}
           text={card.button.text}
           type={card.button.type}
           target='external'
         />
+        }
+        {card.buttons &&
+        card.buttons.map((button, i) => {
+          return (
+            <Button
+              key={i}
+              to={button.to}
+              text={button.text}
+              type={button.type}
+              target='external'
+            />
+          )
+        })}
       </div>
     </div>
   );
