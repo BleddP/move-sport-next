@@ -13,9 +13,14 @@ import LinkedIn from "@assets/icons/linkedin.svg";
 import Phone from "@assets/icons/phone-portrait-outline.svg";
 import Email from "@assets/icons/mail-unread-outline.svg";
 
+// Helper functions
+import renderImage from '../components/helper-functions/renderImage'
+
 const ContactPage = ({ page }) => {
   const phone = page.contact.data.attributes.phone;
   const email = page.contact.data.attributes.email;
+
+  const avatar = renderImage(page.content.avatar.data.attributes)
 
   return (
     <main>
@@ -27,15 +32,33 @@ const ContactPage = ({ page }) => {
               <h1>{page.content.title}</h1>
               <p>{page.content.content}</p>
               <div className="contact-page__contact">
-                <a href="tel:0637347970" target="_blank" rel="noreferrer" referrerPolicy="noopener">
+                <a
+                  href="tel:0637347970"
+                  target="_blank"
+                  rel="noreferrer"
+                  referrerPolicy="noopener"
+                >
                   <Image src={Phone} width={24} height={24} />
                   <span>{phone}</span>
                 </a>
-                <a href="mailto:info@movesportpsychologie.nl" target="_blank" rel="noreferrer" referrerPolicy="noopener">
+                <a
+                  href="mailto:info@movesportpsychologie.nl"
+                  target="_blank"
+                  rel="noreferrer"
+                  referrerPolicy="noopener"
+                >
                   <Image src={Email} width={24} height={24} />
                   <span>{email}</span>
                 </a>
               </div>
+              {page.content.avatar.data && (
+                <img
+                  className="contact-page__avatar"
+                  src={avatar.url}
+                  width={100}
+                  height={100}
+                />
+              )}
               <div className="contact-page__socials">
                 <a
                   href="https://www.instagram.com/movesportpsychologie/"
