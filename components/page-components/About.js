@@ -1,3 +1,6 @@
+// Image
+import Image from 'next/image'
+
 // Libs
 import renderImage from "../helper-functions/renderImage";
 
@@ -8,6 +11,7 @@ import TextBlock from "@ui/TextBlock";
 
 const About = ({ data }) => {
   const image = renderImage(data.image.data.attributes);
+  const signature = renderImage(data.signature.data.attributes)
 
   return (
     <section className="about">
@@ -16,6 +20,7 @@ const About = ({ data }) => {
           <div className="about__content copy">
             {data.title && <h2>{data.title}</h2>}
             {data.intro && <p>{data.intro}</p>}
+            {data.signature && <img src={signature.url} alt={signature.alternativeText} className="signature" width={signature.width} height={signature.height} />}
             {data.dynamic_content &&
               data.dynamic_content.map((item, i) => {
                 const img = "ui-components.image";
