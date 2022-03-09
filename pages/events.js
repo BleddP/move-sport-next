@@ -9,12 +9,13 @@ import Footer from '@ui/layout/Footer'
 import FadeIn from "@components/animated-components/FadeIn";
 
 const EventsPage = ({page}) => {
+
     return (
         <main>
             <NavBarBg />
             <Services services={page.services.services.data} />
             <FadeIn>
-              <Events events={page.events.socials.data} />
+              <Events intro={{title: page.title, intro: page.intro}} events={page.events.socials.data} />
             </FadeIn>
             <FadeIn>
               <Clients clients={page.clients} />

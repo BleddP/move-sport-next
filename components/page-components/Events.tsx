@@ -7,7 +7,7 @@ import moment from "moment";
 // Components
 import EventsPerMonth from "./EventsPerMonth";
 
-const Events = ({ events }) => {
+const Events = ({ events, intro }) => {
   const [eventFilter, setEventFilter] = useState("");
 
   let filteredEvents = events;
@@ -59,8 +59,8 @@ const Events = ({ events }) => {
     <section className="events section">
       <div className="container">
         <div className="events__intro">
-          <h1>Agenda</h1>
-          <p>Staat jou workshop er niet tussen? Neem dan contact met ons op</p>
+          <h1>{intro.title}</h1>
+          <p>{intro.intro}</p>
         </div>
         <div className="events__overview">
           <div className="events__overview__filter">
