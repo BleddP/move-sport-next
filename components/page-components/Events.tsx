@@ -58,10 +58,12 @@ const Events = ({ events, intro }) => {
   return (
     <section className="events section">
       <div className="container">
-        <div className="events__intro">
-          <h1>{intro.title}</h1>
-          <p>{intro.intro}</p>
-        </div>
+        {intro.title &&
+          <div className="events__intro">
+            <h1>{intro.title}</h1>
+            <p>{intro.intro}</p>
+          </div>
+        }
         <div className="events__overview">
           <div className="events__overview__filter">
             <select
@@ -74,17 +76,17 @@ const Events = ({ events, intro }) => {
               <option value="blog">Blog</option>
             </select>
           </div>
-            {perMonth.length === 0 ? (
-              <div className="events__overview__no-results">
-                <span>Sorry, we hebben niks voor je kunnen vinden</span>
-              </div>
-            ) : (
+          {perMonth.length === 0 ? (
+            <div className="events__overview__no-results">
+              <span>Sorry, we hebben niks voor je kunnen vinden</span>
+            </div>
+          ) : (
             <div className="events__overview__events">
               {perMonth.map((eventsThisMonth, key) => {
                 return <EventsPerMonth key={key} events={eventsThisMonth} />;
-            })}
+              })}
             </div>
-            )}
+          )}
         </div>
       </div>
     </section>
