@@ -16,8 +16,8 @@
 
     &__tooltip {
       position: absolute;
-      width: auto;
-      top: -90%;
+      width: max-content;
+      bottom: 90%;
       left: 0;
       background: $branded-gradient;
       color: whitesmoke;
@@ -31,7 +31,7 @@
     &:hover {
       @include breakpoint(md) {
         .partner__tooltip {
-            top: -110%;
+            bottom: 110%;
             opacity: 1;
         }
       }

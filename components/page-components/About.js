@@ -37,13 +37,17 @@ const About = ({ data }) => {
                 const img = "ui-components.image";
                 const button = "ui-components.button";
                 const content = "ui-components.text-block";
-                const accordion = "ui-components.accordion";
-
+                const accordion = "ui-components.accordion"
+                
                 if (item.__component === img) {
                   const image = renderImage(item.image.data.attributes);
+                  const customWidth = item.max_width ? item.max_width : image.width
+                  const aspectRatio = image.height / image.width
+                  const customHeight = item.max_width ? item.max_width * aspectRatio : image.height
+
                   return (
                     <div key={i} className="dynamic-image">
-                      <img src={image.url} alt={item.image.data.name} />
+                      <Image src={image.url} alt={item.image.data.name} width={customWidth} height={customHeight} />
                     </div>
                   );
                 }
