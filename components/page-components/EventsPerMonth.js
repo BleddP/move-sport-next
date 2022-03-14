@@ -25,7 +25,7 @@ const Event = ({ event, index }) => {
    })
 
   let icon = Calendar;
-  switch (event.type) {
+  switch (event.attributes.type) {
     case "event":
       icon = Calendar;
       break;
@@ -44,9 +44,12 @@ const Event = ({ event, index }) => {
       </div>
       <div className="event-info__content">
         <h4>{event.attributes.title}</h4>
-        <span>Evenement: {moment(event.attributes.date).format("DD MMMM YYYY")}</span>
+        <span>{event.attributes.type === 'event' ? 'Evenement: ' : 'Artikel gepubliceerd op '} {moment(event.attributes.date).format("DD MMM YYYY")}</span>
         <span>{event.attributes.location && event.attributes.location}</span>
         <small>{event.attributes.short_description}</small>
+        <br/>
+        {event.attributes.url &&
+        <small><a href={event.attributes.url} target="_blank" rel="noopener">Ontdek meer over {event.attributes.title}</a></small>}
       </div>
     </animated.div>
   );

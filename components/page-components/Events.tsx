@@ -9,6 +9,7 @@ import EventsPerMonth from "./EventsPerMonth";
 
 const Events = ({ events, intro }) => {
   const [eventFilter, setEventFilter] = useState("");
+  const [showAllEvents, setShowAllEvents] = useState(false)
 
   let filteredEvents = events;
   filteredEvents = events.filter((event: any) => {
@@ -22,7 +23,7 @@ const Events = ({ events, intro }) => {
   });
 
   const filterByDate = filteredEvents.sort(function (a: any, b: any) {
-    return a.attributes.timestamp - b.attributes.timestamp;
+    return b.attributes.timestamp - a.attributes.timestamp;
   });
 
   const parsedDates = filterByDate.map((event: any) => {
@@ -31,6 +32,7 @@ const Events = ({ events, intro }) => {
     const year = moment(event.attributes.date).format("YYYY");
     return {
       ...event,
+      monthInt: parseInt(moment(event.attributes.date).format("MM")),
       parsedDate: {
         day,
         month,
@@ -48,12 +50,20 @@ const Events = ({ events, intro }) => {
     const events = parsedDates.filter(
       (event: any) => `${event.parsedDate.month}-${event.parsedDate.year}` === date
     );
+
+    const thisMonth = parseInt(moment().format("MM"))
+    const showEvents = events.find((event: any) => parseInt(moment(event.attributes.date).format('MM')) + 1 >= thisMonth)
+
     return {
+      showEvents: showEvents !== undefined,
+      date: date,
       month: date.split("-")[0],
       year: date.split("-")[1],
       events,
     };
   });
+
+  const currentEvents = perMonth.filter(event => event.showEvents)
 
   return (
     <section className="events section">
@@ -82,11 +92,22 @@ const Events = ({ events, intro }) => {
             </div>
           ) : (
             <div className="events__overview__events">
-              {perMonth.map((eventsThisMonth, key) => {
-                return <EventsPerMonth key={key} events={eventsThisMonth} />;
-              })}
+              {showAllEvents ?
+                (perMonth.map((eventsThisMonth, key) => {
+                  return <EventsPerMonth key={key} events={eventsThisMonth} />;
+                }))
+                :
+                (currentEvents.map((eventsThisMonth, key) => {
+                  return <EventsPerMonth key={key} events={eventsThisMonth} />;
+                }))
+              }
             </div>
           )}
+          {!showAllEvents &&
+            <div className="show-more-btn" style={{display: 'flex', justifyContent: 'center'}}>
+              <button className="btn btn--primary" onClick={() => setShowAllEvents(true)} style={{ display: 'flex', justifySelf: 'flex-end' }}>Laat alles zien</button>
+            </div>
+          }
         </div>
       </div>
     </section>
