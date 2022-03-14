@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 
 import renderImage from "../helper-functions/renderImage";
 
@@ -10,7 +11,9 @@ export const ProductPageIntro = ({ data }) => {
       <div className="columns columns--2-col">
         <div>
           <h1>{data.title}</h1>
-          <p>{data.intro}</p>
+          <ReactMarkdown>
+            {data.intro}
+            </ReactMarkdown>
         </div>
         <div>
           <Image src={image.url} width={image.width} height={image.height} />

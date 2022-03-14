@@ -5,12 +5,14 @@ import Accordion from "@components/ui-components/Accordion";
 import Trajecten from "@components/page-components/Trajecten";
 import ProductPageIntro from "@components/page-components/ProductPageIntro";
 import PartnerStrip from "@components/ui-components/PartnerStrip";
+import ReactMarkdown from "react-markdown";
 import Footer from "@components/ui-components/layout/Footer";
 
 // Animated wrapper
 import FadeIn from "@components/animated-components/FadeIn";
 
 const Method = ({ page }) => {
+  console.log({ page });
   return (
     <div>
       <NavBarBg />
@@ -24,12 +26,21 @@ const Method = ({ page }) => {
           </section>
 
           <section className="section">
-            {page.accordions.map((accordion, i) => {
-              return (
-                <FadeIn key={i}>
-                  <Accordion accordion={accordion} />
-                </FadeIn>
-              );
+            {page.accordions.map((element, i) => {
+              if (element.__component === "ui-components.accordion") {
+                return (
+                  <FadeIn key={i}>
+                    <Accordion accordion={element} />
+                  </FadeIn>
+                );
+              }
+              if (element.__component === "ui-components.rich-text") {
+                return (
+                  <FadeIn key={i}>
+                    <ReactMarkdown>{element.rich_text}</ReactMarkdown>
+                  </FadeIn>
+                );
+              }
             })}
           </section>
           <section className="section">
