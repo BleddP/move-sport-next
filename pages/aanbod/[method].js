@@ -12,7 +12,7 @@ import Footer from "@components/ui-components/layout/Footer";
 import FadeIn from "@components/animated-components/FadeIn";
 
 const Method = ({ page }) => {
-  console.log({ page });
+
   return (
     <div>
       <NavBarBg />
