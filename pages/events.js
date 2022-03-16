@@ -12,7 +12,7 @@ const EventsPage = ({ page }) => {
   return (
     <main>
       <NavBarBg />
-      {page?.services?.services?.data && (
+      {page?.services?.services?.data.length > 0 && (
         <Services services={page.services.services.data} />
       )}
       <FadeIn>
