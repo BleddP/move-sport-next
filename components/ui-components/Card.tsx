@@ -48,10 +48,10 @@ const Card = (props: any) => {
           return (
             <Button
               key={i}
-              to={button.to}
+              to={button.url ? button.url : '/'}
               text={button.text}
-              type={button.type}
-              target={button.target ? button.target : 'internal'}
+              type={button.type ? button.type : 'primary'}
+              target={button.target ? 'external' : 'internal'}
             />
           )
         })}

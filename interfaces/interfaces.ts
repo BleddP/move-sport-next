@@ -6,7 +6,8 @@ export interface Header {
 
 export interface Button {
     text: string,
-    to: string,
+    to?: string,
+    url?: string,
     type: string,
     target: string
 }

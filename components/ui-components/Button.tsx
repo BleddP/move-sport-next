@@ -5,6 +5,7 @@ import Image from "next/image";
 import Chevron from "@assets/icons/chevron-right.svg";
 
 const Button = ({ to, type, text, target }) => {
+
   if (target === "internal") {
     return (
       <Link href={to} passHref>
