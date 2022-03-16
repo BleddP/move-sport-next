@@ -51,7 +51,7 @@ const Card = (props: any) => {
               to={button.url ? button.url : '/'}
               text={button.text}
               type={button.type ? button.type : 'primary'}
-              target={button.target ? 'external' : 'internal'}
+              target={button.target ? button.target : 'internal'}
             />
           )
         })}
