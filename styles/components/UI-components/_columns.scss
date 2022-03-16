@@ -39,6 +39,10 @@
     .columns--image {
       grid-row: 1;
       grid-column: 1;
+      img {
+        border-radius: 25px;
+        box-shadow: none;
+      }
     }
   }
 }

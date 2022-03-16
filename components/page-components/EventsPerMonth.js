@@ -49,7 +49,7 @@ const Event = ({ event, index }) => {
         <small>{event.attributes.short_description}</small>
         <br/>
         {event.attributes.url &&
-        <small><a href={event.attributes.url} target="_blank" rel="noreferrer">Ontdek meer over {event.attributes.title}</a></small>}
+        <small><a href={event.attributes.url} className="btn btn--primary" target="_blank" rel="noreferrer">Ontdek meer: {event.attributes.title}</a></small>}
       </div>
     </animated.div>
   );

@@ -1,14 +1,15 @@
 // Nextjs
-import {useState, useRef} from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
 
 // Components
 import Chevron from '@assets/icons/chevron-down.svg'
 
-const Accordion = ({accordion}) => {
+const Accordion = ({ accordion }) => {
     // Types
-    const title:string = accordion.title
-    const content:string = accordion.content
+    const title: string = accordion.title
+    const content: string = accordion.content
 
     // State
     const [open, setOpen] = useState(false)
@@ -34,8 +35,12 @@ const Accordion = ({accordion}) => {
                     <Image src={Chevron} alt="chevron" width={25} height={25} />
                 </div>
             </div>
-            <div className="accordion__content" style={{height: `${dynamicHeight}px`}}>
-                <p ref={accordionContent}>{content}</p>
+            <div className="accordion__content" style={{ height: `${dynamicHeight}px` }}>
+                <div ref={accordionContent}>
+                    <ReactMarkdown>
+                        {content}
+                    </ReactMarkdown>
+                </div>
             </div>
         </div>
     )

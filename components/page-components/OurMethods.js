@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown'
+
 // Components
 import LinkedSteps from "@components/page-components/LinkedSteps";
 
@@ -9,7 +11,9 @@ const OurMethods = ({ page }) => {
       <div className="our-methods">
         <div className="our-methods__content">
           <h1>{page.title}</h1>
-          <p>{page.intro}</p>
+          <ReactMarkdown>
+            {page.intro}
+          </ReactMarkdown>
         </div>
         <div>
           <LinkedSteps steps={steps} />

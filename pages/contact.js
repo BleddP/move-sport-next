@@ -32,6 +32,7 @@ const ContactPage = ({ page }) => {
               <h1>{page.content.title}</h1>
               <p>{page.content.content}</p>
               <div className="contact-page__contact">
+                <div className="contact-details">
                 <a
                   href="tel:0637347970"
                   target="_blank"
@@ -50,8 +51,8 @@ const ContactPage = ({ page }) => {
                   <Image src={Email} width={24} height={24} />
                   <span>{email}</span>
                 </a>
-              </div>
-              {page.content.avatar.data && (
+                </div>
+                {page.content.avatar.data && (
                 <img
                   className="contact-page__avatar"
                   src={avatar.url}
@@ -59,6 +60,8 @@ const ContactPage = ({ page }) => {
                   height={100}
                 />
               )}
+              </div>
+            
               <div className="contact-page__socials">
                 <a
                   href="https://www.instagram.com/movesportpsychologie/"

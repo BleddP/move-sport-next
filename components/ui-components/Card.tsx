@@ -1,7 +1,8 @@
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 
 // Typescript interfaces
-import {CardInterface} from '@interfaces'
+import { CardInterface } from '@interfaces'
 
 // Components
 import Button from "@components/ui-components/Button";
@@ -17,7 +18,7 @@ const Card = (props: any) => {
   if (card.image.data) {
     image = renderImage(card?.image?.data?.attributes)
   }
-  
+
   return (
     <div className="card">
       {image && (
@@ -27,16 +28,22 @@ const Card = (props: any) => {
       )}
       <div className="card__content">
         <h4 className="gradient-header">{card.title}</h4>
-        <p>{card.content || card.intro}</p>
-        {card.button &&
+        <ReactMarkdown>
+          {card.content || card.intro}
+        </ReactMarkdown>
+      </div>
+
+
+      {card.button &&
         <Button
           to={card.button.to}
           text={card.button.text}
           type={card.button.type}
           target='external'
         />
-        }
-        {card.buttons &&
+      }
+
+      {card.buttons &&
         card.buttons.map((button, i) => {
           return (
             <Button
@@ -44,11 +51,10 @@ const Card = (props: any) => {
               to={button.to}
               text={button.text}
               type={button.type}
-              target='external'
+              target={button.target ? button.target : 'internal'}
             />
           )
         })}
-      </div>
     </div>
   );
 };

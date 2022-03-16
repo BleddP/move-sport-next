@@ -38,15 +38,28 @@
   &__contact {
     display: flex;
     flex-direction: column;
-    a {
-      width: fit-content;
-      margin: 3px 0;
-      @include breakpoint(md) {
-        margin: 6px 0;
-      }
-      span {
-        margin-left: 12px;
-        transform: translateY(6px);
+    align-items: flex-start;
+
+    @include breakpoint(sm) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      margin-right: 24px;
+
+      a {
+        width: fit-content;
+        margin: 3px 0;
+        @include breakpoint(md) {
+          margin: 6px 0;
+        }
+        span {
+          margin-left: 12px;
+          transform: translateY(6px);
+        }
       }
     }
   }

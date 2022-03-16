@@ -1,8 +1,7 @@
 // Components
 import Card from "@components/ui-components/Card";
 
-const Services = ({services}) => {
- 
+const Services = ({ services }) => {
   return (
     <section className="container section">
       <div className="services">
@@ -10,10 +9,9 @@ const Services = ({services}) => {
           service.attributes.button = {
             to: service.attributes.path,
             text: service.attributes.title,
-            type: 'primary',
-            target: 'internal',
-            
-          }
+            type: "primary",
+            target: "internal",
+          };
           return <Card card={service.attributes} key={service.id} />;
         })}
       </div>

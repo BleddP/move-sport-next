@@ -18,12 +18,29 @@
       gap: 48px;
     }
 
-    p {
+    .usp {
       margin-top: 24px;
-      white-space: pre-line;
-
       @include breakpoint(md) {
         margin-top: 48px;
+      }
+
+      ul {
+        list-style-type: none;
+        li {
+          position: relative;
+          text-align: left;
+          line-height: 24px;
+          &::before {
+            position: absolute;
+            top: 0;
+            left: -24px;
+            content: "";
+            background-image: url("../../../assets/icons/checkmark-circle-outline.svg");
+            background-size: contain;
+            height: 18px;
+            width: 18px;
+          }
+        }
       }
     }
   }

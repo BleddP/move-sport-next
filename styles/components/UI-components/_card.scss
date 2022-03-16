@@ -1,34 +1,45 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  border: 1px solid #e3e3e3;
+  background-color: #f1f1f1;
+  transform: scale(1);
+  transition: all 0.35s ease;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
     display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    border: 1px solid #E3E3E3;
-    background-color: #F1F1F1;
-    transform: scale(1);
-    transition: all 0.35s ease;
+    align-items: center;
+    border-radius: 25px 25px 0px 0px;
+  }
 
-    &__image {
-        width: 100%;
-        height: auto;
-        overflow-x: hidden;
-        display: flex;
-        align-items: center;
-        border-radius: 25px 25px 0px 0px;
+  &__content {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    max-width: 90%;
+    @include breakpoint(md) {
+      padding: 24px;
+      max-width: 85%;
     }
 
-    &__content {
-        width: 100%;
-        height: auto;
-        padding: 12px;
-        max-width: 90%;
-        @include breakpoint(md) {
-            padding: 24px;
-            max-width: 85%;
-        }
+    p {
+      margin-bottom: 0;
     }
+  }
 
-    &:hover {
-        transform: scale(1.05);
+  a {
+    margin: auto 12px 12px 12px;
 
+    @include breakpoint(md) {
+      margin: auto 12px 24px 12px;
     }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }

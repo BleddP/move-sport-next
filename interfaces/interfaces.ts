@@ -8,6 +8,7 @@ export interface Button {
     text: string,
     to: string,
     type: string,
+    target: string
 }
 
 export interface CardInterface {
@@ -17,5 +18,5 @@ export interface CardInterface {
     id: number,
     button?: Button,
     buttons?: Button[],
-    image: any
+    image: any,
 }
