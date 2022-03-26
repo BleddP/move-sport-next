@@ -58,7 +58,31 @@
     }
   }
 
+  #form-msg {
+    opacity: 0;
+    width: 0px !important;
+    height: 0px !important;
+  }
+
   .btn {
       align-self: flex-start;
+  }
+  .submit-success {
+    p {
+      color: rgb(40, 138, 40);
+      display: flex;
+      &:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-image: url('../../../assets/icons/checkmark-circle-outline.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 6px;
+      }
+    }
   }
 }

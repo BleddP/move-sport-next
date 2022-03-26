@@ -49,4 +49,14 @@
   &--secondary {
     background: rgba($c2, 0.3);
   }
+
+  &:disabled {
+    background: gray !important;
+    transition: background 0.1s ease;
+
+ 
+    &:hover {
+      cursor: initial;
+    }
+  }
 }
