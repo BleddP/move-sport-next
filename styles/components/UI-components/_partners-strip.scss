@@ -1,12 +1,13 @@
 .partners-strip {
   background-color: white;
   height: 70px;
-  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow-x: auto;
   @include breakpoint(md) {
-    overflow-x: initial;
+    overflow-x: auto;
   }
 
   .partner {
