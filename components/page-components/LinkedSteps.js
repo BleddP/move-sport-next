@@ -6,6 +6,8 @@ import { useSpring, animated } from "react-spring";
 
 const LinkedSteps = ({ steps }) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [iconLoaded, setIconLoaded] = useState(false)
+
   const baseUrl =
     process.env.NODE_ENV === "production" ? "" : "http://localhost:1337";
 
@@ -37,14 +39,15 @@ const LinkedSteps = ({ steps }) => {
           );
         })}
       </div>
-      <div key={activeStep}>
+      <div key={activeStep} className='active-step-container'>
         <animated.div style={transition} className="active-step">
-          <div className="active-step__icon">
+          <div className={iconLoaded ? "active-step__icon loaded" : 'active-step__icon'}>
             <img
               src={
                 baseUrl + steps[activeStep].attributes.icon.data.attributes.url
               }
               alt={steps[activeStep].attributes.title}
+              onLoad={() => setIconLoaded(true)}
             />
           </div>
           <div className="active-step__content">

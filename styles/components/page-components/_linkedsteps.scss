@@ -87,6 +87,13 @@
       }
     }
   }
+  .active-step-container {
+    display: flex;
+    justify-content: flex-start;
+    @include breakpoint(sm) {
+      justify-content: center;
+    }
+  }
 
   .active-step {
     margin-top: 24px;
@@ -113,11 +120,17 @@
       display: flex;
       margin: 24px 0;
       animation: fade-in 1s ease forwards;
+      opacity: 0;
+      transition: opacity 0.2s ease;
 
       @include breakpoint(sm) {
         margin: 0;
         justify-content: center;
         align-items: center;
+      }
+
+      &.loaded {
+        opacity: 1;
       }
 
       img {
@@ -131,9 +144,7 @@
     &__content {
       animation: fade-in 1s ease forwards;
       @include breakpoint(md) {
-        p {
-          max-width: 50%;
-        }
+        width: 450px;
       }
     }
   }
