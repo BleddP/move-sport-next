@@ -32,5 +32,8 @@
     overflow: hidden;
     transition: all 0.35s ease;
     margin-bottom: 12px;
+    p {
+      margin-bottom: 0;
+    }
   }
 }
