@@ -52,7 +52,8 @@ const Events = ({ events, intro }) => {
     );
 
     const thisMonth = parseInt(moment().format("MM"))
-    const showEvents = events.find((event: any) => parseInt(moment(event.attributes.date).format('MM')) + 1 >= thisMonth)
+    const thisyear = parseInt(moment().format("YYYY"))
+    const showEvents = events.find((event: any) => parseInt(moment(event.attributes.date).format('MM')) + 1 >= thisMonth && parseInt(moment(event.attributes.date).format('YYYY')) >= thisyear)
 
     return {
       showEvents: showEvents !== undefined,
