@@ -4,7 +4,7 @@ const renderImage = (imageObject) => {
 
   let image = imageObject;
 
-  if (!development) {
+  if (development) {
     image = {
       ...image,
       url: assetsPath + imageObject.url,
