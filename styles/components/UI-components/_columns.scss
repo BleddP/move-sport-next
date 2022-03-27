@@ -24,12 +24,17 @@
   }
 
   &--2-col {
-    @include breakpoint(lg) {
+    grid-template-columns: 1fr;
+    @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
     }
   }
 
   &--3-col {
+    grid-template-columns: 1fr;
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     @include breakpoint(lg) {
       grid-template-columns: repeat(3, 1fr);
     }

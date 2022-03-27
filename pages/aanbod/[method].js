@@ -57,7 +57,6 @@ const Method = ({ page }) => {
             </section>
           </div>
         </main>
-        {/* {page.partners && <PartnerStrip partners={page.partners} />} */}
         <Footer />
       </div>
     </>

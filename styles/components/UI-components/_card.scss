@@ -31,7 +31,8 @@
     }
   }
 
-  a {
+  a,
+  button {
     margin: auto 12px 12px 12px;
 
     @include breakpoint(md) {

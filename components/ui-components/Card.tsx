@@ -23,7 +23,7 @@ const Card = (props: any) => {
     <div className="card">
       {image && (
         <div className="card__image">
-          <Image src={image.url} alt={card.title} width={750} height={500} layout="intrinsic" priority={true} />
+          <Image src={image.url} alt={card.title} width={750} height={500} layout="intrinsic" priority={false} />
         </div>
       )}
       <div className="card__content">
