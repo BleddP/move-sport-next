@@ -19,6 +19,9 @@
     object-fit: cover;
     border-radius: 50%;
     margin-top: 24px;
+    @include breakpoint(sm) {
+      transform: translateY(-10px);
+    }
   }
 
   &__socials {
