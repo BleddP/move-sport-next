@@ -4,16 +4,22 @@ import About from "../components/page-components/About";
 import Footer from "../components/ui-components/layout/Footer";
 import PartnerStrip from "../components/ui-components/PartnerStrip";
 
+// Head
+import GenerateHead from '@components/head/GenerateHead'
+
 const AboutMe = ({ page }) => {
   return (
-    <main className="page-about">
-      <NavBarBg />
-      <div className="page-about__content">
-        <About data={page} />
-      </div>
-      {page.partners && <PartnerStrip partners={page.partners} />}
-      <Footer />
-    </main>
+    <>
+      {page.search_engines && <GenerateHead data={page.search_engines} />}
+      <main className="page-about">
+        <NavBarBg />
+        <div className="page-about__content">
+          <About data={page} />
+        </div>
+        {page.partners && <PartnerStrip partners={page.partners} />}
+        <Footer />
+      </main>
+    </>
   );
 };
 

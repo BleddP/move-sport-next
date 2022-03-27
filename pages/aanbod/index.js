@@ -6,30 +6,36 @@ import Services from "@components/page-components/Services";
 import Accordion from "@components/ui-components/Accordion";
 import Footer from "@ui/layout/Footer";
 
+// Head
+import GenerateHead from "@components/head/GenerateHead";
+
 // Animated wrapper
 import FadeIn from "@components/animated-components/FadeIn";
 
 const Methods = ({ page }) => {
   return (
-    <div>
-      <NavBarBg />
-      <OurMethods page={page} />
-      <FadeIn>
-        <Services services={page.services.services.data} />
-      </FadeIn>
-      {page.accordions &&
-        page.accordions.map((accordion, i) => {
-          return (
-            <FadeIn key={i}>
-              <div className="container">
-                <Accordion accordion={accordion} />
-              </div>
-            </FadeIn>
-          );
-        })}
-      {page.partners && <PartnerStrip partners={page.partners} />}
-      <Footer />
-    </div>
+    <>
+      {page.search_engines && <GenerateHead data={page.search_engines} />}
+      <main>
+        <NavBarBg />
+        <OurMethods page={page} />
+        <FadeIn>
+          <Services services={page.services.services.data} />
+        </FadeIn>
+        {page.accordions &&
+          page.accordions.map((accordion, i) => {
+            return (
+              <FadeIn key={i}>
+                <div className="container">
+                  <Accordion accordion={accordion} />
+                </div>
+              </FadeIn>
+            );
+          })}
+        {page.partners && <PartnerStrip partners={page.partners} />}
+        <Footer />
+      </main>
+    </>
   );
 };
 

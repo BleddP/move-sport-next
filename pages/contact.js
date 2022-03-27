@@ -6,6 +6,9 @@ import NavBarBg from "@ui/layout/NavBarBg";
 import ContactForm from "@components/page-components/ContactForm";
 import PartnerStrip from "@components/ui-components/PartnerStrip";
 
+// Head
+import GenerateHead from '@components/head/GenerateHead'
+
 // Icons
 import Instagram from "@assets/icons/instagram.svg";
 import Facebook from "@assets/icons/facebook.svg";
@@ -23,6 +26,9 @@ const ContactPage = ({ page }) => {
   const avatar = renderImage(page.content.avatar.data.attributes)
 
   return (
+    <>
+      {page.search_engines && <GenerateHead data={page.search_engines} />}
+   
     <main>
       <NavBarBg />
       <section className="container container--96">
@@ -97,6 +103,7 @@ const ContactPage = ({ page }) => {
       </section>
       {page.partners && <PartnerStrip partners={page.partners} />}
     </main>
+    </>
   );
 };
 
