@@ -18,14 +18,16 @@ const EventsPage = ({ page }) => {
       {page.search_engines && <GenerateHead data={page.search_engines} />}
       <main>
         <NavBarBg />
-        {page?.services?.services?.data.length > 0 && (
-          <Services services={page.services.services.data} />
-        )}
         <FadeIn>
           <Events
             intro={{ title: page.title, intro: page.intro }}
             events={page.events.socials.data}
           />
+        </FadeIn>
+        <FadeIn>
+        {page?.services?.services?.data.length > 0 && (
+          <Services services={page.services.services.data} />
+        )}
         </FadeIn>
         <FadeIn>
           <Clients clients={page.clients} />
