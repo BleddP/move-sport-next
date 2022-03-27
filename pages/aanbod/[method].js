@@ -47,7 +47,7 @@ const Method = ({ page }) => {
                 }
               })}
             </section>
-            <section className="section">
+            <section className="section" style={{paddingTop: 0}}>
               <FadeIn>
                 <Trajecten
                   intro={page.trajecten_intro}
