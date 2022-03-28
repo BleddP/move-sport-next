@@ -103,6 +103,8 @@ const ContactForm = () => {
               onFocus={focusForm}
               onBlur={onBlur}
               id="name"
+              minLength={2}
+              maxLength={25}
             />
           </div>
           <div className="field">
@@ -115,6 +117,8 @@ const ContactForm = () => {
               onFocus={focusForm}
               onBlur={onBlur}
               id="email"
+              minLength={5}
+              maxLength={55}
             />
           </div>
           <div className="field">
@@ -126,6 +130,7 @@ const ContactForm = () => {
               onFocus={focusForm}
               onBlur={onBlur}
               id="phone"
+              maxLength={12}
             />
           </div>
           <div className="field">
@@ -150,6 +155,7 @@ const ContactForm = () => {
               onChange={updateForm}
               onFocus={focusForm}
               onBlur={onBlur}
+              maxLength={500}
             ></textarea>
           </div>
           <div id="form-msg" className="field">

@@ -89,6 +89,9 @@ const Footer = () => {
                   type="text"
                   id="footer-tel"
                   placeholder="Bel mij terug"
+                  minLength={5}
+                  maxLength={12}
+                  required
                 />
                 <input
                   onChange={(e) => setMsg(e.target.value)}
