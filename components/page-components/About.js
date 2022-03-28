@@ -9,7 +9,7 @@ import Button from "@ui/Button";
 import Accordion from "@ui/Accordion";
 import TextBlock from "@ui/TextBlock";
 
-const About = ({ data }) => {
+const About = ({ data, h1Header }) => {
   const image = renderImage(data.image.data.attributes);
   let signature = {};
   if (data.signature?.data) {
@@ -18,10 +18,11 @@ const About = ({ data }) => {
 
   return (
     <section className="about">
-      <div className="container container--48">
+      <div className="container">
         <div className="about__content">
           <div className="about__content copy">
-            {data.title && <h2>{data.title}</h2>}
+            {data.title && h1Header && <h1>{data.title}</h1>}
+            {data.title && !h1Header && <h2>{data.title}</h2>}
             {data.intro && <p>{data.intro}</p>}
             {data.signature && (
               <img

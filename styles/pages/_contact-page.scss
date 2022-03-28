@@ -1,5 +1,7 @@
 .contact-page {
-  min-height: calc(100vh - 200px);
+  @include breakpoint(lg) {
+    min-height: calc(100vh - 390px);
+  }
   &__grid {
     display: grid;
     grid-template-columns: 1fr;

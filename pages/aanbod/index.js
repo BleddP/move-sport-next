@@ -18,20 +18,22 @@ const Methods = ({ page }) => {
       {page.search_engines && <GenerateHead data={page.search_engines} />}
       <main>
         <NavBarBg />
-        <OurMethods page={page} />
-        <FadeIn>
-          <Services services={page.services.services.data} />
-        </FadeIn>
-        {page.accordions &&
-          page.accordions.map((accordion, i) => {
-            return (
-              <FadeIn key={i}>
-                <div className="container">
-                  <Accordion accordion={accordion} />
-                </div>
-              </FadeIn>
-            );
-          })}
+        <div className="container container--96">
+          <OurMethods page={page} />
+          <FadeIn>
+            <Services services={page.services.services.data} />
+          </FadeIn>
+          {page.accordions &&
+            page.accordions.map((accordion, i) => {
+              return (
+                <FadeIn key={i}>
+                  <div className="container">
+                    <Accordion accordion={accordion} />
+                  </div>
+                </FadeIn>
+              );
+            })}
+        </div>
         {page.partners && <PartnerStrip partners={page.partners} />}
         <Footer />
       </main>

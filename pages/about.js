@@ -5,7 +5,7 @@ import Footer from "../components/ui-components/layout/Footer";
 import PartnerStrip from "../components/ui-components/PartnerStrip";
 
 // Head
-import GenerateHead from '@components/head/GenerateHead'
+import GenerateHead from "@components/head/GenerateHead";
 
 const AboutMe = ({ page }) => {
   return (
@@ -13,8 +13,10 @@ const AboutMe = ({ page }) => {
       {page.search_engines && <GenerateHead data={page.search_engines} />}
       <main className="page-about">
         <NavBarBg />
-        <div className="page-about__content">
-          <About data={page} />
+        <div className="container container--96">
+          <div className="page-about__content">
+            <About data={page} h1Header={true} />
+          </div>
         </div>
         {page.partners && <PartnerStrip partners={page.partners} />}
         <Footer />

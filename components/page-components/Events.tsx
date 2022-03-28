@@ -68,7 +68,7 @@ const Events = ({ events, intro }) => {
 
   return (
     <section className="events section">
-      <div className="container">
+      <div className="container container--96">
         {intro.title &&
           <div className="events__intro">
             <h1>{intro.title}</h1>
