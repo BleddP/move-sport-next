@@ -72,6 +72,7 @@
           .event-info {
             display: flex;
             padding: 24px 0;
+            
             &:first-child {
               padding-top: 0;
             }
@@ -88,6 +89,21 @@
               display: flex;
               flex-direction: column;
               margin-left: 24px;
+
+              .highlight {
+                &::after {
+                  background-image: url("../../../assets/icons/heart-circle.svg");
+                  content: "";
+                  display:inline-block;
+                  height:32px;
+                  width:32px;
+                  margin-left: 8px;
+                  background-size: 32px 32px;
+                  background-repeat: no-repeat;
+                  filter: invert(26%) sepia(85%) saturate(7045%) hue-rotate(265deg) brightness(97%) contrast(108%);
+                }
+              }
+
               h4,
               span {
                 margin: 0;

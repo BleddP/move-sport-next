@@ -37,19 +37,21 @@ const Event = ({ event, index }) => {
       icon = Blog;
   }
 
+  const highlight = event.attributes.highlight
+
   return (
     <animated.div style={transition} key={event.id} className="event-info">
       <div className="event-info__icon">
         <Image src={icon} width={48} height={48} />
       </div>
       <div className="event-info__content">
-        <h4>{event.attributes.title}</h4>
+        <h4 className={highlight ? 'highlight' : ''}>{event.attributes.title}</h4>
         <span>{event.attributes.type === 'event' ? 'Evenement: ' : 'Artikel gepubliceerd op '} {moment(event.attributes.date).format("DD MMM YYYY")}</span>
         <span>{event.attributes.location && event.attributes.location}</span>
         <small>{event.attributes.short_description}</small>
         <br/>
         {event.attributes.url &&
-        <small><a href={event.attributes.url} className="btn btn--primary" target="_blank" rel="noreferrer">Ontdek meer: {event.attributes.title}</a></small>}
+        <small><a href={event.attributes.url} className="btn btn--primary" target="_blank" rel="noreferrer">Lees meer</a></small>}
       </div>
     </animated.div>
   );

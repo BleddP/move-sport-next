@@ -1,12 +1,14 @@
 .mental-training {
   background-color: $dark;
-  padding: 48px 0;
   * {
     color: whitesmoke;
   }
 
   &__content {
     text-align: center;
+    h2 {
+      margin-bottom: 0;
+    }
   }
 
   &__usps {
@@ -26,6 +28,10 @@
 
       ul {
         list-style-type: none;
+        margin-left: 60px;
+        @include breakpoint(lg) {
+          margin-left: 40px;
+        }
         li {
           position: relative;
           text-align: left;

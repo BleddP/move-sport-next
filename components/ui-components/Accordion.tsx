@@ -23,7 +23,7 @@ const Accordion = ({ accordion }) => {
         if (open) {
             setDynamicHeight(0)
         } else {
-            setDynamicHeight(contentHeight)
+            setDynamicHeight(contentHeight + 25)
         }
     }
 

@@ -21,6 +21,11 @@ const Methods = ({ page }) => {
         <div className="container container--96">
           <OurMethods page={page} />
           <FadeIn>
+            <div style={{display: 'flex', justifyContent: 'center', paddingTop: 48}}>
+            <h2 style={{marginBottom: 0}}>Start nu jou traject!</h2>
+            </div>
+          </FadeIn>
+          <FadeIn>
             <Services services={page.services.services.data} />
           </FadeIn>
           {page.accordions &&
