@@ -19,16 +19,22 @@ const MentalTraining = ({ data }) => {
           <h2>{data.title}</h2>
           <div className="mental-training__usps">
             <div className="usp">
-              <Image width={96} height={96} src={image_1.url} />
-              <ReactMarkdown>{data.intro_1}</ReactMarkdown>
+              <Image width={60} height={60} src={image_1.url} />
+              <div style={{ marginTop: 12 }}>
+                <ReactMarkdown>{data.intro_1}</ReactMarkdown>
+              </div>
             </div>
             <div className="usp">
-              <Image width={96} height={96} src={image_2.url} />
-              <ReactMarkdown>{data.intro_2}</ReactMarkdown>
+              <Image width={60} height={60} src={image_2.url} />
+              <div style={{ marginTop: 12 }}>
+                <ReactMarkdown>{data.intro_2}</ReactMarkdown>
+              </div>
             </div>
             <div className="usp">
-              <Image width={96} height={96} src={image_3.url} />
-              <ReactMarkdown>{data.intro_3}</ReactMarkdown>
+              <Image width={60} height={60} src={image_3.url} />
+              <div style={{ marginTop: 12 }}>
+                <ReactMarkdown>{data.intro_3}</ReactMarkdown>
+              </div>
             </div>
           </div>
         </div>
