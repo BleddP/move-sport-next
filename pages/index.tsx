@@ -25,7 +25,7 @@ const Home = ({ page }) => {
           type="homepage"
           header={page.header}
         />
-        <About data={page.about_me} />
+        <About h1Header={false} data={page.about_me} />
         <FadeIn>
           <MentalTraining data={page.mental_training} />
         </FadeIn>
