@@ -26,13 +26,13 @@ const About = ({ data, h1Header, homepage }) => {
 
   const handleScroll = () => {
     const position = window.scrollY;
-    setYPos(position * 0.4);
+    setYPos(Math.round(position * 0.5));
   };
 
   useEffect(() => {
     setTimeout(() => {
       showImage();
-    }, 2000);
+    }, 1000);
 
     if (!homepage && window.innerWidth > 990) {
       window.addEventListener("scroll", handleScroll);

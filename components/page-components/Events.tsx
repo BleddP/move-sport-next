@@ -67,7 +67,7 @@ const Events = ({ events, intro }) => {
   const currentEvents = perMonth.filter(event => event.showEvents)
 
   return (
-    <section className="events section">
+    <section className="events">
       <div className="container container--96">
         {intro.title &&
           <div className="events__intro">

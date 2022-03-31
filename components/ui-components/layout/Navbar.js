@@ -160,9 +160,11 @@ const Navbar = () => {
     return (
       <header className="header">
         <div className="header__container">
-          <div className="header__logo">
-            <Image src={Logo} height={50} />
-          </div>
+          <Link href="/">
+            <div className="header__logo">
+              <Image src={Logo} height={50} />
+            </div>
+          </Link>
           <div className="header__navigation">
             <MenuButton setOpenState={setOpenState} open={open} />
             <MobileMenu open={open} menu={menu} />

@@ -20,7 +20,7 @@ const Home = ({ page }) => {
       {page.search_engines &&
         <GenerateHead data={page.search_engines} />
       }
-      <main>
+      <main className="homepage">
         <Hero
           type="homepage"
           header={page.header}
@@ -31,7 +31,7 @@ const Home = ({ page }) => {
         </FadeIn>
         <FadeIn>
           <div className="container container--48" style={{width: '100%', display: 'flex', justifyContent: 'center', paddingBottom: 0}}>
-          <h2 style={{marginBottom: 0}}>Start nu jouw traject!</h2>
+          <h2 style={{marginBottom: 0, marginTop: 24}}>Start nu jouw traject!</h2>
           </div>
         </FadeIn>
         <FadeIn>

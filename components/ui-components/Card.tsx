@@ -39,8 +39,8 @@ const Card = (props: any) => {
           to={card.button.to}
           text={card.button.text}
           type={card.button.type}
-          target='external'
-        />
+          target={card.button.target ? card.button.target : 'internal'}
+          />
       }
 
       {card.buttons &&
