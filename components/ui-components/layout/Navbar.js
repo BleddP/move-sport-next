@@ -76,11 +76,6 @@ const Navbar = () => {
     },
     {
       id: 4,
-      menu: "Artikelen",
-      to: "/articles",
-    },
-    {
-      id: 5,
       menu: "Contact",
       to: "/contact",
     },
