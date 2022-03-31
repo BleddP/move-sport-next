@@ -32,7 +32,7 @@ const Article: React.FC<Props> = ({ page }) => {
                         <div className='avatar'>
                             <Image src={authorImage.url} width={100} height={100} layout='fixed' />
                         </div>
-                        <h4 className='author'>Chloe Wevers</h4>
+                        <h4 className='author'>Chloé Webers</h4>
 
                         <small className='published'>Gepubliceerd op {date}</small>
                     </div>
