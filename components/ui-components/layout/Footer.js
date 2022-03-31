@@ -91,7 +91,7 @@ const Footer = () => {
                   type="text"
                   id="footer-tel"
                   placeholder="Bel mij terug"
-                  minLength={5}
+                  minLength={8}
                   maxLength={12}
                   required
                 />
