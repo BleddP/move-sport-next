@@ -31,7 +31,7 @@ const Home = ({ page }) => {
         </FadeIn>
         <FadeIn>
           <div className="container container--48" style={{width: '100%', display: 'flex', justifyContent: 'center', paddingBottom: 0}}>
-          <h2 style={{marginBottom: 0}}>Start nu jou traject!</h2>
+          <h2 style={{marginBottom: 0}}>Start nu jouw traject!</h2>
           </div>
         </FadeIn>
         <FadeIn>

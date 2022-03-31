@@ -22,7 +22,7 @@ const Methods = ({ page }) => {
           <OurMethods page={page} />
           <FadeIn>
             <div style={{display: 'flex', justifyContent: 'center', paddingTop: 48}}>
-            <h2 style={{marginBottom: 0}}>Start nu jou traject!</h2>
+            <h2 style={{marginBottom: 0}}>Start nu jouw traject!</h2>
             </div>
           </FadeIn>
           <FadeIn>
