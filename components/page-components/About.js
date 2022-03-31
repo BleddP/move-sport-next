@@ -34,7 +34,7 @@ const About = ({ data, h1Header, homepage }) => {
       showImage();
     }, 2000);
 
-    if (!homepage) {
+    if (!homepage && window.innerWidth > 990) {
       window.addEventListener("scroll", handleScroll);
       return () => {
         window.removeEventListener("scroll", handleScroll);
