@@ -23,6 +23,10 @@ html, body {
         margin: 0 auto;
     }
 
+    &--24 {
+        padding: 24px 0;
+    }
+
     &--48 {
         padding: 24px 0;
         @include breakpoint(md) {

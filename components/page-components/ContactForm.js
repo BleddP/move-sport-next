@@ -20,8 +20,6 @@ const ContactForm = () => {
     formMessage: "",
   });
 
-  console.log(formData)
-
   const updateForm = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };

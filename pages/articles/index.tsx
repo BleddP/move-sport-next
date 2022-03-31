@@ -13,6 +13,7 @@ interface Props {
 
 const ArticlesOverview: React.FC<Props> = ({ page }) => {
 
+    const articles = page.articles?.articles?.data
     return (
         <>
             {page.search_engines && <GenerateHead data={page.search_engines} />}
@@ -25,14 +26,11 @@ const ArticlesOverview: React.FC<Props> = ({ page }) => {
                         <h2>Artikelen en Blogs</h2>
                     </section>
                     <section className='articles'>
-                        <ArticleCard title='Title echt een superhasdjiqwdjiejsoi' content="hello dit is content" url="/contact" />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" highlight />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" />
-                        <ArticleCard title='Title' content="hello dit is content" url="/contact" />
+                        {articles && articles .length > 0 &&
+                            articles.map((article: any) => {
+                                return <ArticleCard key={article.id} slug={article.attributes.slug} highlight={article.attributes.highlight} articleCard={article.attributes.article_card} />
+                            })
+                        }
                     </section>
                 </div>
             </main>
@@ -47,7 +45,7 @@ import axios from 'axios';
 // Fetch data from the server
 export async function getServerSideProps(context: any) {
 
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homepage`)
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/article-overview`)
 
     if (response.status && response.status < 300) {
         return {
