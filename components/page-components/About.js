@@ -1,4 +1,5 @@
 // Image
+import {useEffect, useState} from 'react'
 import Image from "next/image";
 
 // Libs
@@ -10,11 +11,34 @@ import Accordion from "@ui/Accordion";
 import TextBlock from "@ui/TextBlock";
 
 const About = ({ data, h1Header }) => {
+  const [loaded, setLoaded] = useState(false)
+  const [yPos, setYPos] = useState(0)
+
   const image = renderImage(data.image.data.attributes);
   let signature = {};
   if (data.signature?.data) {
     signature = renderImage(data.signature.data.attributes);
   }
+
+  const showImage = () => {
+    setLoaded(true)
+  }
+
+  const handleScroll = () => {
+    const position = window.scrollY
+    setYPos(position * 0.7)
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      showImage()
+    }, 2000);
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <section className="about">
@@ -74,8 +98,8 @@ const About = ({ data, h1Header }) => {
                 }
               })}
           </div>
-          <div className="about__content image">
-            <img src={image.url} alt={data.title} />
+          <div  className={loaded ? "about__content image loaded" : "about__content image"}>
+            <img style={{transform: `translateY(${yPos}px)`}} src={image.url} alt={data.title} />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import React from 'react'
 import GenerateHead from '@components/head/GenerateHead'
 import Hero from '@components/ui-components/Hero'
 import ArticleCard from '@components/ui-components/ArticleCard'
+import Footer from '@components/ui-components/layout/Footer'
 
 interface Props {
     page: any
@@ -34,6 +35,7 @@ const ArticlesOverview: React.FC<Props> = ({ page }) => {
                     </section>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

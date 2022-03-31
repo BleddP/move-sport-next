@@ -67,9 +67,10 @@ const Footer = () => {
             <h4>MOVE sportpsychologie</h4>
             <Link href="/">Home</Link>
             <Link href="/about">Over MOVE</Link>
-            <Link href="/aanbod/">Aanbod</Link>
-            <Link href="/events/">Events</Link>
-            <Link href="/contact/">Contact</Link>
+            <Link href="/aanbod">Aanbod</Link>
+            <Link href="/events">Events</Link>
+            <Link href="/articles">Events</Link>
+            <Link href="/contact">Contact</Link>
           </div>
           <div className="footer__grid__logo">
             <Image src={Logo} height={200} width={200} />

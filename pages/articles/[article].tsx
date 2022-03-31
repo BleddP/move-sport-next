@@ -7,8 +7,7 @@ import GenerateHead from '@components/head/GenerateHead'
 import Hero from '@components/ui-components/Hero'
 import Button from '@components/ui-components/Button'
 import Accordion from '@components/ui-components/Accordion'
-import TextBlock from '@components/ui-components/TextBlock'
-
+import Footer from '@components/ui-components/layout/Footer'
 import ReactMarkdown from 'react-markdown'
 
 interface Props {
@@ -95,6 +94,7 @@ const Article: React.FC<Props> = ({ page }) => {
 
                 </div>
             </main>
+            <Footer />
         </>
 
     )

@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0px;
+
     @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
       gap: 24px;
@@ -35,6 +36,15 @@
       justify-content: center;
       border-radius: 50%;
       z-index: -1;
+      transform: translateY(24px);
+      opacity: 0;
+      transition: all 1s ease;
+
+      &.loaded {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       @include breakpoint(lg) {
         min-height: 500;
         width: 500;

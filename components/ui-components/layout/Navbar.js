@@ -27,7 +27,7 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setOpen(false);
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "inherit";
   };
   const setOpenState = () => {
     if (!open) {
@@ -76,6 +76,11 @@ const Navbar = () => {
     },
     {
       id: 4,
+      menu: "Artikelen",
+      to: "/articles",
+    },
+    {
+      id: 5,
       menu: "Contact",
       to: "/contact",
     },
