@@ -1,5 +1,5 @@
 // Image
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Libs
@@ -10,9 +10,9 @@ import Button from "@ui/Button";
 import Accordion from "@ui/Accordion";
 import TextBlock from "@ui/TextBlock";
 
-const About = ({ data, h1Header }) => {
-  const [loaded, setLoaded] = useState(false)
-  const [yPos, setYPos] = useState(0)
+const About = ({ data, h1Header, homepage }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [yPos, setYPos] = useState(0);
 
   const image = renderImage(data.image.data.attributes);
   let signature = {};
@@ -21,24 +21,26 @@ const About = ({ data, h1Header }) => {
   }
 
   const showImage = () => {
-    setLoaded(true)
-  }
+    setLoaded(true);
+  };
 
   const handleScroll = () => {
-    const position = window.scrollY
-    setYPos(position * 0.7)
-  }
+    const position = window.scrollY;
+    setYPos(position * 0.7);
+  };
 
   useEffect(() => {
     setTimeout(() => {
-      showImage()
+      showImage();
     }, 2000);
 
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
+    if (!homepage) {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
-  }, [])
+  }, []);
 
   return (
     <section className="about">
@@ -62,17 +64,26 @@ const About = ({ data, h1Header }) => {
                 const img = "ui-components.image";
                 const button = "ui-components.button";
                 const content = "ui-components.text-block";
-                const accordion = "ui-components.accordion"
-                
+                const accordion = "ui-components.accordion";
+
                 if (item.__component === img) {
                   const image = renderImage(item.image.data.attributes);
-                  const customWidth = item.max_width ? item.max_width : image.width
-                  const aspectRatio = image.height / image.width
-                  const customHeight = item.max_width ? item.max_width * aspectRatio : image.height
+                  const customWidth = item.max_width
+                    ? item.max_width
+                    : image.width;
+                  const aspectRatio = image.height / image.width;
+                  const customHeight = item.max_width
+                    ? item.max_width * aspectRatio
+                    : image.height;
 
                   return (
                     <div key={i} className="dynamic-image">
-                      <Image src={image.url} alt={item.image.data.name} width={customWidth} height={customHeight} />
+                      <Image
+                        src={image.url}
+                        alt={item.image.data.name}
+                        width={customWidth}
+                        height={customHeight}
+                      />
                     </div>
                   );
                 }
@@ -98,8 +109,16 @@ const About = ({ data, h1Header }) => {
                 }
               })}
           </div>
-          <div  className={loaded ? "about__content image loaded" : "about__content image"}>
-            <img style={{transform: `translateY(${yPos}px)`}} src={image.url} alt={data.title} />
+          <div
+            className={
+              loaded ? "about__content image loaded" : "about__content image"
+            }
+          >
+            <img
+              style={{ transform: `translateY(${yPos}px)` }}
+              src={image.url}
+              alt={data.title}
+            />
           </div>
         </div>
       </div>

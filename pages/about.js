@@ -15,7 +15,7 @@ const AboutMe = ({ page }) => {
         <NavBarBg />
         <div className="container container--96">
           <div className="page-about__content">
-            <About data={page} h1Header={true} />
+            <About data={page} h1Header={true} homepage={false} />
           </div>
         </div>
         {page.partners && <PartnerStrip partners={page.partners} />}
