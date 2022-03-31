@@ -26,7 +26,7 @@ const About = ({ data, h1Header, homepage }) => {
 
   const handleScroll = () => {
     const position = window.scrollY;
-    setYPos(position * 0.7);
+    setYPos(position * 0.4);
   };
 
   useEffect(() => {
