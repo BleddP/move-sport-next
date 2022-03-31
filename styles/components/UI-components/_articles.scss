@@ -1,0 +1,84 @@
+.articles {
+  display: grid;
+  gap: 12px;
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__card {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    box-shadow: 1px 1px 20px -10px rgba(0, 0, 0.1);
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 5px 5px 20px -7px rgb(84, 52, 126);
+    }
+
+    &.highlight {
+      .articles__card__title {
+          position: relative;
+        &::after {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          background-image: url("../../../assets/icons/star-outline.svg");
+          content: "";
+          height: 24px;
+          width: 24px;
+          background-size: 24px 24px;
+          background-repeat: no-repeat;
+          filter: invert(26%) sepia(85%) saturate(7045%) hue-rotate(265deg)
+            brightness(97%) contrast(108%);
+        }
+      }
+    }
+
+    .content {
+      padding: 12px;
+      padding-bottom: 0;
+      height: auto;
+      @include breakpoint(md) {
+        padding: 24px;
+        padding-bottom: 0;
+      }
+    }
+
+    &__image {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    &__title {
+      color: rgba($c2, 0.5);
+      margin-bottom: 0px;
+      line-height: 32px;
+      margin-bottom: 6px;
+    }
+    &__author {
+      font-style: italic;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    &__content {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a,
+    button {
+      margin: auto 12px 12px 12px;
+
+      @include breakpoint(md) {
+        margin: auto 12px 24px 24px;
+      }
+    }
+  }
+}
