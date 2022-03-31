@@ -46,7 +46,8 @@ const Footer = () => {
       .then(() => {
         setSubmitSuccess(true);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log({err})
         setSubmitSuccess(false);
         setSubmitError(
           "Sorry, er is iets mis gegaan. Probeer het later nog een keer of bel me direct!"
