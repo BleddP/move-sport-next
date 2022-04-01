@@ -24,7 +24,7 @@ const ArticlesOverview: React.FC<Props> = ({ page }) => {
                 />
                 <div className="container container--96">
                     <section>
-                        <h2>Artikelen en Blogs</h2>
+                        <h2>{page.title}</h2>
                     </section>
                     <section className='articles'>
                         {articles && articles .length > 0 &&
