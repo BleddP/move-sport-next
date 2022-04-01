@@ -70,7 +70,7 @@ const Footer = () => {
             <Link href="/about">Over MOVE</Link>
             <Link href="/aanbod">Aanbod</Link>
             <Link href="/events">Events</Link>
-            <Link href="/articles">Artikelen</Link>
+            <Link href="/inspiratie">Inspiratie</Link>
             <Link href="/contact">Contact</Link>
           </div>
           <div className="footer__grid__logo">

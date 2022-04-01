@@ -33,7 +33,7 @@ const ArticleCard: React.FC<Props> = ({ slug, highlight, articleCard }) => {
                 <h3 className='articles__card__title'>{title}</h3>
                 <p>{short_description}</p>
             </div>
-            <Button text='Lees meer' target='internal' type='primary' to={`/articles/${slug}`} />
+            <Button text='Lees meer' target='internal' type='primary' to={`/inspiratie/${slug}`} />
         </div>
     )
 }

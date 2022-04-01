@@ -10,11 +10,11 @@ const FooterStrip = () => {
   return (
     <footer className="footer__strip">
       <div>
-        <Link href="/">
+        <Link href="/policies/terms-conditions">
           <a>Algemene Voorwaarden</a>
         </Link>
         {' '}
-        <Link href="/">
+        <Link href="/policies/privacy">
           <a>Privacy Verklaring</a>
         </Link>
       </div>
