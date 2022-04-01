@@ -7,7 +7,9 @@
   justify-content: center;
   overflow-x: auto;
   @include breakpoint(md) {
-    overflow-x: auto;
+    overflow-x: clip;
+    overflow-y: visible;
+    max-width: none;
   }
 
   .partner {

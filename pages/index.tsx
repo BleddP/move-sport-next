@@ -30,7 +30,7 @@ const Home = ({ page }) => {
           <MentalTraining data={page.mental_training} />
         </FadeIn>
         <FadeIn>
-          <div className="container container--48" style={{width: '100%', display: 'flex', justifyContent: 'center', paddingBottom: 0}}>
+          <div className="container container--48" style={{display: 'flex', justifyContent: 'center', paddingBottom: 0}}>
           <h2 style={{marginBottom: 0, marginTop: 24}}>Start nu jouw traject!</h2>
           </div>
         </FadeIn>
