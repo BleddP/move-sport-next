@@ -35,6 +35,7 @@ const GenerateHead = ({ data }) => {
       {og_locale && <meta property="og:locale" content={og_locale} />}
       <meta name="twitter:card" content="summary_large_image" />
       {image && <meta property="og:image" content={image} />}
+      <link rel="shortcut icon" href="/favicon.png" />
     </Head>
   );
 };
