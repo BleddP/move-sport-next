@@ -4,13 +4,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "FreightSans Pro", "Arial", sans-serif;
+  font-family: 'FreightSans Pro', 'Arial', sans-serif;
   color: $dark;
   margin: 0;
 }
 
 *:not(h1, h2, h3, h4, h5, h6) {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: $dark;
 }
 
@@ -75,4 +75,27 @@ span {
   background-size: contain;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text {
+  &--primary {
+    color: $c1;
+  }
+
+  &--accent {
+    color: $c2;
+  }
+
+  &--muted {
+    color: $muted !important;
+  }
+}
+
+.font {
+  &--primary {
+  }
+
+  &--secondary {
+    font-family: 'Montserrat', sans-serif;
+  }
 }

@@ -3,16 +3,50 @@
   outline: none;
   border: none;
   padding: 12px 24px;
-  border-radius: 25px;
+  border-radius: 8px;
   transition: all 0.35s ease;
   width: fit-content;
   display: flex;
   align-items: center;
 
+  &--primary {
+    background: $branded-gradient;
+    color: white;
+  }
+
+  &--secondary {
+    background: rgba($c2, 0.3);
+  }
+
+  &__small {
+    padding: 8px 18px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    span {
+      transform: translateX(0px);
+    }
+
+    .icon {
+      transform: translateX(4px);
+      opacity: 1;
+    }
+  }
+
+  &:disabled {
+    background: gray !important;
+    transition: background 0.1s ease;
+
+    &:hover {
+      cursor: initial;
+    }
+  }
+
   .text {
     margin: 0;
     color: white;
-    font-family: "FreightSans Pro", "Arial", sans-serif;
+    font-family: 'FreightSans Pro', 'Arial', sans-serif;
     font-weight: 600;
     font-size: 18px;
     transform: translateX(8px);
@@ -28,35 +62,5 @@
     transform: translateX(0px);
     opacity: 0;
     transition: all 0.35s ease;
-  }
-
-  &:hover {
-    cursor: pointer;
-    span {
-        transform: translateX(0px);
-    }
-
-    .icon {
-        transform: translateX(4px);
-        opacity: 1;
-    }
-  }
-  &--primary {
-    background: $branded-gradient;
-    color: white;
-  }
-
-  &--secondary {
-    background: rgba($c2, 0.3);
-  }
-
-  &:disabled {
-    background: gray !important;
-    transition: background 0.1s ease;
-
- 
-    &:hover {
-      cursor: initial;
-    }
   }
 }

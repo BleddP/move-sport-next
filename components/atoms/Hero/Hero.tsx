@@ -22,15 +22,18 @@ export const Hero = (props: any) => {
       className={type === 'homepage' ? 'hero homepage' : 'hero'}
       style={{ backgroundImage: `url('${image.url}')` }}
     >
+      <div className='hero__overlay'></div>
       <div className='container'>
         <div className='hero__content'>
-          <h1>{header.title}</h1>
-          {header.subtitle && <h4>{header.subtitle}</h4>}
           {type === 'homepage' && (
             <div className='vspn-certified'>
               <Image src={VSPN} />
               <span>gecertificeerd</span>
             </div>
+          )}{' '}
+          <h1>{header.title}</h1>
+          {header.subtitle && (
+            <h4 className='text--muted font--secondary'>{header.subtitle}</h4>
           )}
           {header.buttons &&
             header.buttons.map((button: any) => {

@@ -11,6 +11,7 @@ import Logo from '@assets/logos/logo_white.svg'
 import iconFB from '@assets/icons/facebook.svg'
 import iconIG from '@assets/icons/instagram.svg'
 import iconLI from '@assets/icons/linkedin.svg'
+import { Button } from '@atoms'
 
 export const Navbar = () => {
   // Menu State
@@ -124,6 +125,8 @@ export const Navbar = () => {
                 }
               })}
             </nav>
+          </div>
+          <div className='header__navigation__right'>
             <div className='header__navigation__socials'>
               <a
                 href='https://www.instagram.com/movesportpsychologie/'
@@ -147,6 +150,7 @@ export const Navbar = () => {
                 <Image src={iconLI} />
               </a>
             </div>
+            <Button text='Plan jouw sessie' small />
           </div>
         </div>
       </header>
