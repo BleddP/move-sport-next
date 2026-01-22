@@ -1,18 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@ui/*": ["components/ui-components/*"],
-      "@components/*": ["components/*"],
-      "@assets/*": ["assets/*"],
-      "@interfaces": ["interfaces/interfaces"]
-    },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -25,14 +14,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "downlevelIteration": true
+    "baseUrl": ".",
+    "paths": {
+      "@atoms": ["components/atoms/index.atoms.components"],
+      "@features": ["components/features/index.features.components"],
+      "@utils": ["utils/index.utils"],
+      "@typings": ["typings/index.typings"],
+      "@assets/*": ["assets/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

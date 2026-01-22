@@ -1,20 +1,14 @@
-// Components
-import NavBarBg from "@ui/layout/NavBarBg";
-import About from "../components/page-components/About";
-import Footer from "../components/ui-components/layout/Footer";
-import PartnerStrip from "../components/ui-components/PartnerStrip";
-
-// Head
-import GenerateHead from "@components/head/GenerateHead";
+import { NavBarBg, About, Footer } from '@features'
+import { PartnerStrip, PageHead } from '@atoms'
 
 const AboutMe = ({ page }) => {
   return (
     <>
-      {page.search_engines && <GenerateHead data={page.search_engines} />}
-      <main className="page-about">
+      {page.search_engines && <PageHead data={page.search_engines} />}
+      <main className='page-about'>
         <NavBarBg />
-        <div className="container container--96">
-          <div className="page-about__content">
+        <div className='container container--96'>
+          <div className='page-about__content'>
             <About data={page} h1Header={true} homepage={false} />
           </div>
         </div>
@@ -22,27 +16,27 @@ const AboutMe = ({ page }) => {
         <Footer />
       </main>
     </>
-  );
-};
+  )
+}
 
 // Libs
-import axios from "axios";
+import axios from 'axios'
 
 // Fetch data from the server
 export async function getServerSideProps() {
   const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/about`
-  );
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/about`,
+  )
 
   if (response.status && response.status < 300) {
     return {
       props: {
         page: response.data.data.attributes,
       },
-    };
+    }
   } else {
-    console.log("Error: ", response);
+    console.log('Error: ', response)
   }
 }
 
-export default AboutMe;
+export default AboutMe

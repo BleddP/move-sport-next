@@ -1,37 +1,30 @@
-// Components
-import Hero from "@components/ui-components/Hero";
-import About from "@components/page-components/About";
-import MentalTraining from "@components/page-components/MentalTraining";
-import Services from "@components/page-components/Services";
-import Clients from "@components/page-components/Clients";
-import PartnerStrip from "@components/ui-components/PartnerStrip";
-import Footer from '@components/ui-components/layout/Footer'
-
-// Head
-import GenerateHead from '../components/head/GenerateHead'
-
-// Animated wrapper
-import FadeIn from "@components/animated-components/FadeIn";
+import axios from 'axios'
+import { About, MentalTraining, Services, Clients, Footer } from '@features'
+import { Hero, FadeIn, PartnerStrip } from '@atoms'
+import { PageHead } from '@features'
 
 const Home = ({ page }) => {
-
   return (
     <>
-      {page.search_engines &&
-        <GenerateHead data={page.search_engines} />
-      }
-      <main className="homepage">
-        <Hero
-          type="homepage"
-          header={page.header}
-        />
+      {page.search_engines && <PageHead data={page.search_engines} />}
+      <main className='homepage'>
+        <Hero type='homepage' header={page.header} />
         <About h1Header={false} data={page.about_me} homepage />
         <FadeIn>
           <MentalTraining data={page.mental_training} />
         </FadeIn>
         <FadeIn>
-          <div className="container container--48" style={{display: 'flex', justifyContent: 'center', paddingBottom: 0}}>
-          <h2 style={{marginBottom: 0, marginTop: 24}}>Start nu jouw traject!</h2>
+          <div
+            className='container container--48'
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              paddingBottom: 0,
+            }}
+          >
+            <h2 style={{ marginBottom: 0, marginTop: 24 }}>
+              Start nu jouw traject!
+            </h2>
           </div>
         </FadeIn>
         <FadeIn>
@@ -44,26 +37,23 @@ const Home = ({ page }) => {
         <Footer />
       </main>
     </>
-  );
-};
+  )
+}
 
-// Libs
-import axios from 'axios';
-
-// Fetch data from the server
 export async function getServerSideProps(context: any) {
-
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homepage`)
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/homepage`,
+  )
 
   if (response.status && response.status < 300) {
     return {
       props: {
-        page: response.data.data.attributes
-      }
+        page: response.data.data.attributes,
+      },
     }
   } else {
     console.log('Error: ', response)
   }
 }
 
-export default Home;
+export default Home

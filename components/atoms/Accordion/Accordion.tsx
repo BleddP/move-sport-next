@@ -1,0 +1,45 @@
+import { useState, useRef } from 'react'
+import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
+import Chevron from '@assets/icons/chevron-down.svg'
+
+export const Accordion = ({ accordion }) => {
+  const title: string = accordion.title
+  const content: string = accordion.content
+
+  const [open, setOpen] = useState(false)
+  const [dynamicHeight, setDynamicHeight] = useState(0)
+  const accordionContent = useRef(null)
+
+  const toggleAccordion = () => {
+    setOpen(!open)
+    const contentHeight = accordionContent.current.offsetHeight
+    if (open) {
+      setDynamicHeight(0)
+    } else {
+      setDynamicHeight(contentHeight + 25)
+    }
+  }
+
+  return (
+    <div className='accordion'>
+      <div
+        className={open ? 'accordion__header open' : 'accordion__header'}
+        onClick={toggleAccordion}
+      >
+        <h4 className='accordion__title'>{title}</h4>
+        <div className='accordion__icon'>
+          <Image src={Chevron} alt='chevron' width={25} height={25} />
+        </div>
+      </div>
+      <div
+        className='accordion__content'
+        style={{ height: `${dynamicHeight}px` }}
+      >
+        <div ref={accordionContent}>
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </div>
+      </div>
+    </div>
+  )
+}
