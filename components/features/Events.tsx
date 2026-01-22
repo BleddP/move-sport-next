@@ -1,11 +1,7 @@
 // React
-import { useState } from 'react'
-
-// Libs
+import { useEffect, useState } from 'react'
 import moment from 'moment'
-
-// Components
-import EventsPerMonth from './EventsPerMonth'
+import { EventsPerMonth } from '@features'
 
 export const Events = ({ events, intro }) => {
   const [eventFilter, setEventFilter] = useState('')
@@ -71,6 +67,10 @@ export const Events = ({ events, intro }) => {
 
   const currentEvents = perMonth.filter((event) => event.showEvents)
 
+  useEffect(() => {
+    if (!currentEvents?.length) setShowAllEvents(true)
+  }, [currentEvents])
+
   return (
     <section className='events'>
       <div className='container container--96'>
@@ -78,20 +78,30 @@ export const Events = ({ events, intro }) => {
           <div className='events__intro'>
             <h1>{intro.title}</h1>
             <p>{intro.intro}</p>
+            <div>
+              <div className='events__overview__filter'>
+                <select
+                  defaultValue={''}
+                  onChange={(e) => setEventFilter(e.target.value)}
+                >
+                  <option value=''>Alles tonen</option>
+                  <option value='event'>Evenement</option>
+                  <option value='article'>Artikel</option>
+                  <option value='blog'>Blog</option>
+                </select>
+              </div>
+              {!showAllEvents && (
+                <button
+                  className='btn btn--primary'
+                  onClick={() => setShowAllEvents(true)}
+                >
+                  Laat alles zien
+                </button>
+              )}
+            </div>
           </div>
         )}
         <div className='events__overview'>
-          <div className='events__overview__filter'>
-            <select
-              defaultValue={''}
-              onChange={(e) => setEventFilter(e.target.value)}
-            >
-              <option value=''>Alles tonen</option>
-              <option value='event'>Evenement</option>
-              <option value='article'>Artikel</option>
-              <option value='blog'>Blog</option>
-            </select>
-          </div>
           {perMonth.length === 0 ? (
             <div className='events__overview__no-results'>
               <span>Sorry, we hebben niks voor je kunnen vinden</span>
@@ -105,20 +115,6 @@ export const Events = ({ events, intro }) => {
                 : currentEvents.map((eventsThisMonth, key) => {
                     return <EventsPerMonth key={key} events={eventsThisMonth} />
                   })}
-            </div>
-          )}
-          {!showAllEvents && (
-            <div
-              className='show-more-btn'
-              style={{ display: 'flex', justifyContent: 'center' }}
-            >
-              <button
-                className='btn btn--primary'
-                onClick={() => setShowAllEvents(true)}
-                style={{ display: 'flex', justifySelf: 'flex-end' }}
-              >
-                Laat alles zien
-              </button>
             </div>
           )}
         </div>

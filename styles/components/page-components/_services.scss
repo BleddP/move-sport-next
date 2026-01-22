@@ -7,10 +7,10 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 24px 0;
 
-  @include breakpoint(lg) {
-    gap: 24px;
-    padding: 48px 0;
-  }
+    @include breakpoint(lg) {
+      gap: 48px;
+      padding: 48px 0;
+    }
 
     .card {
       justify-self: center;

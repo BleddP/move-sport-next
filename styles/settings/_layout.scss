@@ -1,55 +1,59 @@
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    max-width: 1360px;
+  max-width: 1360px;
+  margin: 0 12px;
+
+  @include breakpoint(xs) {
     margin: 0 12px;
+  }
 
-    @include breakpoint(xs) {
-        margin: 0 12px;
-    }
+  @include breakpoint(md) {
+    margin: 0 24px;
+  }
 
+  @include breakpoint(lg) {
+    margin: 0 48px;
+  }
+
+  @include breakpoint(container) {
+    margin: 0 auto;
+  }
+
+  &--24 {
+    padding: 24px 0;
+  }
+
+  &--48 {
+    padding: 24px 0;
     @include breakpoint(md) {
-        margin: 0 24px;
+      padding: 48px 0;
     }
+  }
 
-    @include breakpoint(lg) {
-        margin: 0 48px;
+  &--96 {
+    padding: 48px 0;
+    @include breakpoint(md) {
+      padding: 96px 0;
     }
+  }
 
-    @include breakpoint(container) {
-        margin: 0 auto;
-    }
-
-    &--24 {
-        padding: 24px 0;
-    }
-
-    &--48 {
-        padding: 24px 0;
-        @include breakpoint(md) {
-            padding: 48px 0;
-        }
-    }
-
-    &--96 {
-        padding: 48px 0;
-        @include breakpoint(md) {
-            padding: 96px 0;
-        }
-    }
+  &__narrow {
+    max-width: 1080px;
+  }
 }
 
 .section {
-    padding: 12px 0;
-    @include breakpoint(md) {
-        padding: 24px 0;
-    }
+  padding: 12px 0;
+  @include breakpoint(md) {
+    padding: 24px 0;
+  }
 
-    @include breakpoint(lg) {
-        padding: 24px 0;
-    }
-
+  @include breakpoint(lg) {
+    padding: 24px 0;
+  }
 }

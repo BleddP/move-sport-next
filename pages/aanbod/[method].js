@@ -6,7 +6,7 @@ import {
   NavBarBg,
   PageHead,
 } from '@features'
-import { FadeIn, Accordion, Hero } from '@atoms'
+import { FadeIn, Accordion, Hero, Container } from '@atoms'
 
 const Method = ({ page }) => {
   return (
@@ -17,7 +17,7 @@ const Method = ({ page }) => {
         <NavBarBg />
         <Hero header={page.header} />
         <main className='page-product'>
-          <div className='container'>
+          <Container narrow>
             <section className='section'>
               <FadeIn>
                 <ProductPageIntro data={page.product_intro} />
@@ -42,6 +42,8 @@ const Method = ({ page }) => {
                 }
               })}
             </section>
+          </Container>
+          <Container>
             <section className='section' style={{ paddingTop: 0 }}>
               <FadeIn>
                 <Trajecten
@@ -50,7 +52,7 @@ const Method = ({ page }) => {
                 />
               </FadeIn>
             </section>
-          </div>
+          </Container>
         </main>
         <Footer />
       </div>

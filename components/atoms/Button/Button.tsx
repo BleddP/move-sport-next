@@ -7,6 +7,7 @@ import { useMemo } from 'react'
 interface IButton {
   to?: string
   type?: 'primary' | 'secondary'
+  variant?: 'contained' | 'outlined'
   text: string
   target?: 'internal' | 'external'
   small?: boolean
@@ -15,6 +16,7 @@ interface IButton {
 export const Button = ({
   to,
   type = 'primary',
+  variant = 'contained',
   text,
   target,
   small,
@@ -25,8 +27,9 @@ export const Button = ({
       type === 'primary' && 'btn--primary',
       type === 'secondary' && 'btn--secondary',
       small && 'btn__small',
+      variant === 'outlined' && 'btn__outlined',
     )
-  }, [type, small])
+  }, [type, small, variant])
 
   if (target === 'internal') {
     return (

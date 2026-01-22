@@ -11,3 +11,7 @@ $branded-gradient: linear-gradient(135deg, $c1, $c2);
 body {
   background-color: whitesmoke;
 }
+
+:root {
+  --color-primary: $c1;
+}

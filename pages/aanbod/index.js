@@ -1,5 +1,5 @@
 import { Footer, Services, OurMethods, NavBarBg, PageHead } from '@features'
-import { FadeIn, Accordion, PartnerStrip } from '@atoms'
+import { FadeIn, Accordion, PartnerStrip, Container } from '@atoms'
 
 const Methods = ({ page }) => {
   return (
@@ -7,7 +7,7 @@ const Methods = ({ page }) => {
       {page.search_engines && <PageHead data={page.search_engines} />}
       <main>
         <NavBarBg />
-        <div className='container container--96'>
+        <div>
           <OurMethods page={page} />
           <FadeIn>
             <div
@@ -23,16 +23,18 @@ const Methods = ({ page }) => {
           <FadeIn>
             <Services services={page.services.services.data} />
           </FadeIn>
-          {page.accordions &&
-            page.accordions.map((accordion, i) => {
-              return (
-                <FadeIn key={i}>
-                  <div className='container'>
-                    <Accordion accordion={accordion} />
-                  </div>
-                </FadeIn>
-              )
-            })}
+          <Container narrow>
+            {page.accordions &&
+              page.accordions.map((accordion, i) => {
+                return (
+                  <FadeIn key={i}>
+                    <div className='container'>
+                      <Accordion accordion={accordion} />
+                    </div>
+                  </FadeIn>
+                )
+              })}
+          </Container>
         </div>
         {page.partners && <PartnerStrip partners={page.partners} />}
         <Footer />

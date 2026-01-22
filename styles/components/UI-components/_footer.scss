@@ -64,7 +64,7 @@
           display: flex;
           align-items: center;
           &:before {
-            content: "";
+            content: '';
             position: relative;
             display: inline-block;
             width: 18px;
@@ -85,8 +85,9 @@
         justify-content: space-between;
         width: fit-content;
         height: 40px;
-        border-radius: 25px;
+        border-radius: 8px;
         padding: 6px 12px;
+        padding-right: 6px;
 
         input {
           background-color: whitesmoke;

@@ -5,10 +5,11 @@
   z-index: 99;
 
   &.bg {
-    // background: linear-gradient(45deg, #dfd3ef, $c2);
-    background: linear-gradient(45deg, $c2, #dfd3ef);
-    box-shadow: 0px 26px 34px -24px rgba(0, 0, 0, 0.7);
+    // position: sticky;
+    // top: 0;
     position: relative;
+    background: linear-gradient(165deg, #05030c, #21104f, #2e184a);
+    box-shadow: 0px 26px 34px -24px rgba(0, 0, 0, 0.7);
     z-index: 1;
   }
 

@@ -150,7 +150,7 @@ export const Navbar = () => {
                 <Image src={iconLI} />
               </a>
             </div>
-            <Button text='Plan jouw sessie' small />
+            <Button to='/contact' text='Maak een afspraak' small />
           </div>
         </div>
       </header>

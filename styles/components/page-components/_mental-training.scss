@@ -1,13 +1,15 @@
 .mental-training {
-  background-color: $dark;
+  background: linear-gradient(165deg, #05030c, #21104f, #2e184a);
   * {
     color: whitesmoke;
   }
 
   &__content {
     text-align: center;
-    h2 {
-      margin-bottom: 0;
+    p {
+      font-size: 18px;
+      max-width: 50%;
+      margin-inline: auto;
     }
   }
 
@@ -21,31 +23,22 @@
     }
 
     .usp {
+      border: 1px solid white;
+      border-radius: 8px;
+      padding-block: 24px;
+      padding-inline: 48px;
       margin-top: 24px;
       @include breakpoint(md) {
         margin-top: 48px;
       }
 
       ul {
-        list-style-type: none;
-        margin-left: 60px;
-        @include breakpoint(lg) {
-          margin-left: 40px;
-        }
+        list-style-type: circle;
         li {
           position: relative;
           text-align: left;
           line-height: 24px;
-          &::before {
-            position: absolute;
-            top: 0;
-            left: -24px;
-            content: "";
-            background-image: url("../../../assets/icons/checkmark-circle-outline.svg");
-            background-size: contain;
-            height: 18px;
-            width: 18px;
-          }
+          color: $muted;
         }
       }
     }

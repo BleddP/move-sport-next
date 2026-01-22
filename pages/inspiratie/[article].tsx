@@ -1,13 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 
-// Components
 import { renderImage } from '@utils'
-import GenerateHead from '@components/head/GenerateHead'
-import Hero from '@components/ui-components/Hero'
-import { Button } from '@atoms'
-import Accordion from '@components/ui-components/Accordion'
-import Footer from '@components/ui-components/layout/Footer'
+import { Accordion, Button, Hero } from '@atoms'
+import { Footer, PageHead } from '@features'
 import ReactMarkdown from 'react-markdown'
 
 interface Props {
@@ -24,7 +20,7 @@ const Article: React.FC<Props> = ({ page }) => {
 
   return (
     <>
-      {page.search_engines && <GenerateHead data={page.search_engines} />}
+      {page.search_engines && <PageHead data={page.search_engines} />}
       <Hero header={page.header} />
       <main className='container container--96'>
         <div className='article'>

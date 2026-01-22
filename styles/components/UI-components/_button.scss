@@ -22,6 +22,11 @@
     padding: 8px 18px;
   }
 
+  &__outlined {
+    background: transparent;
+    border: 1px solid $muted;
+  }
+
   &:hover {
     cursor: pointer;
     span {

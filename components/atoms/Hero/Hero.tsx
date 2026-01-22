@@ -35,18 +35,21 @@ export const Hero = (props: any) => {
           {header.subtitle && (
             <h4 className='text--muted font--secondary'>{header.subtitle}</h4>
           )}
-          {header.buttons &&
-            header.buttons.map((button: any) => {
-              return (
-                <Button
-                  key={button.id}
-                  to={button.url}
-                  text={button.text}
-                  type={button.button_type}
-                  target={button.target}
-                />
-              )
-            })}
+          <div className='hero__cta'>
+            {header.buttons &&
+              header.buttons.map((button: any) => {
+                return (
+                  <Button
+                    key={button.id}
+                    to={button.url}
+                    text={button.text}
+                    type={button.button_type}
+                    target={button.target}
+                  />
+                )
+              })}
+            <Button text='Ons aanbod' variant='outlined' />
+          </div>
         </div>
       </div>
     </div>

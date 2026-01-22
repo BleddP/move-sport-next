@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { renderImage } from '@utils'
-import { Button, Accordion, TextBlock } from '@atoms'
+import { Button, Accordion, TextBlock, Container } from '@atoms'
 
 export const About = ({ data, h1Header, homepage }) => {
   const [loaded, setLoaded] = useState(false)
@@ -37,7 +37,7 @@ export const About = ({ data, h1Header, homepage }) => {
 
   return (
     <section className='about'>
-      <div className='container'>
+      <Container narrow>
         <div className='about__content'>
           <div className='about__content copy'>
             {data.title && h1Header && <h1>{data.title}</h1>}
@@ -108,13 +108,13 @@ export const About = ({ data, h1Header, homepage }) => {
             }
           >
             <img
-              style={{ transform: `translateY(${yPos}px)` }}
+              style={{ transform: `translateY(${yPos * 1.6}px)` }}
               src={image.url}
               alt={data.title}
             />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

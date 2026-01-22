@@ -14,6 +14,10 @@ export const MentalTraining = ({ data }) => {
       <div className='container container--48'>
         <div className='mental-training__content'>
           <h2>{data.title}</h2>
+          <p className='text--muted'>
+            Een helder proces van kennismaking tot resultaat. Zo weet je precies
+            wat je kunt verwachten.
+          </p>
           <div className='mental-training__usps'>
             <div className='usp'>
               <div style={{ marginTop: 12 }}>

@@ -6,7 +6,7 @@ import {
   NavBarBg,
   PageHead,
 } from '@features'
-import { FadeIn, PartnerStrip } from '@atoms'
+import { FadeIn, PartnerStrip, Container } from '@atoms'
 
 const EventsPage = ({ page }) => {
   return (
@@ -15,10 +15,12 @@ const EventsPage = ({ page }) => {
       <main>
         <NavBarBg />
         <FadeIn>
-          <Events
-            intro={{ title: page.title, intro: page.intro }}
-            events={page.events.socials.data}
-          />
+          <Container narrow>
+            <Events
+              intro={{ title: page.title, intro: page.intro }}
+              events={page.events.socials.data}
+            />
+          </Container>
         </FadeIn>
         <FadeIn>
           {page?.services?.services?.data.length > 0 && (
