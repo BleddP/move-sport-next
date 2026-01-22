@@ -1,5 +1,5 @@
-import { NavBarBg, About, Footer } from '@features'
-import { PartnerStrip, PageHead } from '@atoms'
+import { NavBarBg, About, Footer, PageHead } from '@features'
+import { PartnerStrip } from '@atoms'
 
 const AboutMe = ({ page }) => {
   return (

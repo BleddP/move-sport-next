@@ -1,4 +1,4 @@
-export * from './PageHead/PageHead'
+export * from './PageHead'
 export * from './About'
 export * from './Approaches'
 export * from './Clients'

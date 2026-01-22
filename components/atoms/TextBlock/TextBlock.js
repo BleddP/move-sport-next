@@ -1,12 +1,10 @@
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from 'react-markdown'
 
-const TextBlock = ({ data }) => {
+export const TextBlock = ({ data }) => {
   return (
-    <section className="text-block">
+    <section className='text-block'>
       <h2>{data.title}</h2>
       <ReactMarkdown>{data.content}</ReactMarkdown>
     </section>
-  );
-};
-
-export default TextBlock  
+  )
+}
