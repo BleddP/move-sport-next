@@ -20,7 +20,12 @@ export const Hero = (props: any) => {
   return (
     <div
       className={type === 'homepage' ? 'hero homepage' : 'hero'}
-      style={{ backgroundImage: `url('${image.url}')` }}
+      style={
+        {
+          backgroundImage: `url('${image.url}')`,
+          '--hero-height': type === 'homepage' ? '80vh' : '40vh',
+        } as React.CSSProperties
+      }
     >
       <div className='hero__overlay'></div>
       <div className='container'>

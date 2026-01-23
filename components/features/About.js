@@ -36,7 +36,7 @@ export const About = ({ data, h1Header, homepage }) => {
   }, [])
 
   return (
-    <section className='about'>
+    <section className='about radial-bg'>
       <Container narrow>
         <div className='about__content'>
           <div className='about__content copy'>
