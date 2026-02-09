@@ -53,7 +53,9 @@ export const Hero = (props: any) => {
                   />
                 )
               })}
-            <Button text='Ons aanbod' variant='outlined' />
+            {type === 'homepage' && (
+              <Button text='Ons aanbod' variant='outlined' to='/aanbod' />
+            )}
           </div>
         </div>
       </div>
