@@ -14,7 +14,7 @@ export const OurMethods = ({ page }) => {
             <ReactMarkdown>{page.intro}</ReactMarkdown>
           </div>
         </Container>
-        <Container>
+        <Container narrow>
           <LinkedSteps steps={steps} />
         </Container>
       </div>
