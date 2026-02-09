@@ -36,13 +36,17 @@ export const Card = (props: any) => {
         <Button
           to={card.button.to}
           text={card.button.text}
-          type={card.button.type}
-          target={card.button.target ? card.button.target : 'internal'}
+          type={(card.button as any).type}
+          target={
+            (card.button as any).target
+              ? (card.button as any).target
+              : 'internal'
+          }
         />
       )}
 
       {card.buttons &&
-        card.buttons.map((button, i) => {
+        card.buttons.map((button: any, i: number) => {
           return (
             <Button
               key={i}

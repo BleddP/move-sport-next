@@ -40,6 +40,8 @@ export const Events = ({ events, intro }) => {
   const allMonths = parsedDates.map(
     (event: any) => `${event.parsedDate.month}-${event.parsedDate.year}`,
   )
+
+  // @ts-expect-error: err
   const unique = [...new Set(allMonths)]
 
   const perMonth = unique.map((date: string) => {

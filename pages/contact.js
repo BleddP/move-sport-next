@@ -1,8 +1,8 @@
 // Next
 import Image from 'next/image'
 
-import { ContactForm, NavBarBg } from '@features'
-import { PartnerStrip, PageHead, Container } from '@atoms'
+import { ContactForm, NavBarBg, PageHead } from '@features'
+import { PartnerStrip, Container } from '@atoms'
 
 import Instagram from '@assets/icons/instagram.svg'
 import Facebook from '@assets/icons/facebook.svg'
